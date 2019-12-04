@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+    >
+
+    <TextView
+            android:textSize="16dp"
+            android:text="재료명"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/Detail_unit_item_text" android:layout_weight="1"/>
+    <TextView
+            android:textSize="16dp"
+            android:text="단위"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/Detail_unit_item_unit" android:layout_weight="1"/>
+
+    </LinearLayout>
+    <View
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="#C0C0C0"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" android:id="@+id/textView12"/>
+</LinearLayout>

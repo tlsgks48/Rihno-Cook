@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.rihno_cook">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+            android:name="android.hardware.camera2"
+            android:required="true"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".Talk_upload">
+        </activity>
+        <activity android:name=".Video_comment">
+        </activity>
+        <activity android:name=".Video_update">
+        </activity>
+        <activity android:name=".Video_upload">
+        </activity>
+        <activity android:name=".recipe_comment">
+        </activity>
+        <activity android:name=".recipeUpdate">
+        </activity>
+        <activity android:name=".recipe_detail">
+        </activity>
+        <activity android:name=".RecipeUpload">
+        </activity>
+        <activity
+                android:name=".SplashScreen"
+                android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Search">
+        </activity>
+        <activity android:name=".Menu4_list">
+        </activity>
+        <activity android:name=".Menu3_list">
+        </activity>
+        <activity android:name=".Menu2_list">
+        </activity>
+        <activity android:name=".Menu6">
+        </activity>
+        <activity android:name=".Menu5">
+        </activity>
+        <activity android:name=".Login">
+        </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+        <activity
+                android:name="com.ipaulpro.afilechooser.FileChooserActivity"
+                android:enabled="@bool/use_activity"
+                android:exported="true"
+                android:icon="@drawable/ic_chooser"
+                android:label="@string/choose_file">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

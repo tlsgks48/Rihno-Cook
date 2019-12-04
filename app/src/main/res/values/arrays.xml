@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_entries">
+        <item >상태</item>
+        <item >신남</item>
+        <item >슬픔</item>
+        <item >화남</item>
+        <item >우울</item>
+    </string-array>
+</resources>

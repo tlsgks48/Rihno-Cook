@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".Menu2">
+
+<!--    <ImageView
+            android:src="@drawable/menu2_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/imageView5"/>-->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <TextView
+                android:layout_margin="2dp"
+                android:text="메뉴2"
+                android:textSize="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView6"/>
+
+        <Button
+                android:text="레시피 작성하기"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:background="@android:color/holo_green_dark"
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recipe_uploade_button"/>
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:layout_marginRight="1dp"
+                android:id="@+id/swipe_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_menu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    </LinearLayout>
+</FrameLayout>
