@@ -109,7 +109,6 @@ class Menu4Adapter(internal var context: Context?,
         try {
             @SuppressLint("SimpleDateFormat")
             val formatter = SimpleDateFormat("yyyy-MM-dd")
-
             val d1 : Date = formatter.parse(onlyDate.toString())
             val d2 : Date = formatter.parse(talkList[p1].day)
 
