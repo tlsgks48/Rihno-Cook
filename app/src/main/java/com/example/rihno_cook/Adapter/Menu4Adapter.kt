@@ -120,9 +120,22 @@ class Menu4Adapter(internal var context: Context?,
             // 이제 24*60*60*1000(각 시간값에 따른 차이점) 을 나눠주면 일수가 나온다
             var calDateDays : Long = calDate / (24*60*60*1000)
             calDateDays = Math.abs(calDateDays)
-
-            p0.talk_day.text = calDateDays.toString()+"일 전"
-
+            if(calDateDays < 1){
+                p0.talk_day.text = "오늘"
+            }
+            else if(calDateDays > 364){
+                calDateDays = calDateDays/365
+                p0.talk_day.text = calDateDays.toString()+"년 전"
+            }else if(calDateDays > 29) {
+                calDateDays = calDateDays/30
+                p0.talk_day.text = calDateDays.toString()+"달 전"
+            }else if(calDateDays > 6) {
+                calDateDays = calDateDays/7
+                p0.talk_day.text = calDateDays.toString()+"주 전"
+            }else{
+                p0.talk_day.text = calDateDays.toString()+"일 전"
+            }
+            talkList[p1].day = p0.talk_day.text.toString()
         }catch (e: ParseException){}
 
         p0.setClick(object:IRecyclerOnClick{

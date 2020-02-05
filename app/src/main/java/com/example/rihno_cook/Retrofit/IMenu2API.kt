@@ -45,4 +45,12 @@ interface IMenu2API {
     @get:GET("menu4")
     val menu4List:Observable<ArrayList<Talk>>
 
+    @POST("menu4_comment")
+    @FormUrlEncoded
+    fun commentList4(@Field("recipe_id") recipe_id:Int):Observable<ArrayList<Comment>>
+
+    @POST("menu6_get")
+    @FormUrlEncoded
+    fun Menu6_Info(@Field("user") user:String?):Observable<ArrayList<Info>>
+
 }

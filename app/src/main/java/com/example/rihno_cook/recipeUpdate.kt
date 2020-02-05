@@ -458,6 +458,7 @@ class recipeUpdate : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                         override fun onResponse(call: Call<String>, response: Response<String>) { // 업로드 완료
                             Toast.makeText(this@recipeUpdate, "업로딩 성공!!", Toast.LENGTH_LONG).show()
                             val nextIntent = Intent(this@recipeUpdate, MainActivity::class.java)
+                            nextIntent.putExtra("번호",1)
                             startActivity(nextIntent)
                             // 요리순서 업로드
                             uploadOrderFile()
@@ -479,6 +480,7 @@ class recipeUpdate : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                         override fun onResponse(call: Call<String>, response: Response<String>) { // 업로드 완료
                             Toast.makeText(this@recipeUpdate, "업로딩 성공!!", Toast.LENGTH_LONG).show()
                             val nextIntent = Intent(this@recipeUpdate, MainActivity::class.java)
+                            nextIntent.putExtra("번호",1)
                             startActivity(nextIntent)
                             // 요리순서 업로드
                             uploadOrderFile()

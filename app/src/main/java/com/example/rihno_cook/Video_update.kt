@@ -82,6 +82,7 @@ class Video_update : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                     override fun onResponse(call: Call<String>, response: Response<String>) {
                         Toast.makeText(this@Video_update, "업로딩 성공!!", Toast.LENGTH_LONG).show()
                         val nextIntent = Intent(this@Video_update, MainActivity::class.java)
+                        nextIntent.putExtra("번호",2)
                         startActivity(nextIntent)
                     }
 
@@ -100,6 +101,7 @@ class Video_update : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                     override fun onResponse(call: Call<String>, response: Response<String>) {
                         Toast.makeText(this@Video_update, "업로딩 성공!!", Toast.LENGTH_LONG).show()
                         val nextIntent = Intent(this@Video_update, MainActivity::class.java)
+                        nextIntent.putExtra("번호",2)
                         startActivity(nextIntent)
                     }
 

@@ -120,4 +120,17 @@ interface IUploadAPI {
                        @Part ("text") text:String,
                        @Part ("day") day:String): Call<String>
 
+    @Multipart
+    @POST("menu4_update")
+    fun TalkUpdateFile(@Part file: MultipartBody.Part,
+                       @Part ("id") id:Int,
+                       @Part ("text") text:String,
+                       @Part ("day") day:String): Call<String>
+
+    @Multipart
+    @POST("menu4_update")
+    fun TalkUpdateFile2(
+        @Part ("id") id:Int,
+        @Part ("text") text:String,
+        @Part ("day") day:String): Call<String>
 }

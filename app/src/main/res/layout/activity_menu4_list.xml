@@ -1,10 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         tools:context=".Menu4_list">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/detail_talk_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_light"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    >
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+            android:gravity="left"
+            android:id="@+id/detail_talk_user"
+            android:text="토크 유저"
+            android:textSize="18dp"
+            android:padding="4dp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:gravity="left"
+            android:id="@+id/detail_talk_day"
+            android:text="토크 날짜"
+            android:padding="4dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@android:color/black"
+            android:gravity="left"
+            android:id="@+id/detail_talk_text"
+            android:text="내용"
+            android:padding="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:scaleType="fitXY"
+            android:padding="4dp"
+            android:id="@+id/detail_talk_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+    <View
+            android:layout_marginTop="4dp"
+            android:background="#DCDCDC"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" android:id="@+id/textView17"/>
+
+    <LinearLayout
+            android:layout_margin="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <EditText
+                android:id="@+id/detail_talk_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:ems="11"
+                android:hint="댓글로 궁금한 것을 남겨주세요."
+                android:inputType="textPersonName" />
+
+        <Button
+                android:id="@+id/detail_talk_comment_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="댓글 등록" />
+    </LinearLayout>
+
+    <View
+            android:layout_margin="3dp"
+            android:background="#DCDCDC"
+            android:layout_width="match_parent"
+            android:layout_height="2dp" android:id="@+id/textView14"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_margin="4dp"
+            android:id="@+id/detail_talk_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    >
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

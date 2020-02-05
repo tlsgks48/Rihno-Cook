@@ -145,6 +145,7 @@ class Menu3_list : AppCompatActivity() {
                         })
 
                     val nextIntent = Intent(this, MainActivity::class.java)
+                    nextIntent.putExtra("번호",2)
                     startActivity(nextIntent)
 
                 }

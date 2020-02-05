@@ -93,6 +93,7 @@ class Video_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
                     override fun onResponse(call: Call<String>, response: Response<String>) {
                         Toast.makeText(this@Video_upload, "업로딩 성공!!", Toast.LENGTH_LONG).show()
                         val nextIntent = Intent(this@Video_upload, MainActivity::class.java)
+                        nextIntent.putExtra("번호",2)
                         startActivity(nextIntent)
                     }
 

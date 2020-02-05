@@ -7,6 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface INodeJS {
+     fun qtest1(fu:Observable<String>):Observable<String>
     // @@@@@@@@@@@@@@@@@@@@@@@@  로그인 및 회원가입 유저 정보
     @POST("register")
     @FormUrlEncoded
@@ -149,5 +150,41 @@ interface INodeJS {
     @POST("good_number4")
     @FormUrlEncoded
     fun recipe_good_number4(@Field("recipe_id") recipe_id:Int):Observable<Int>
+
+    // 관심부분
+    @POST("good4")
+    @FormUrlEncoded
+    fun recipe_good4(@Field("user") user:String,
+                     @Field("recipe_id") recipe_id:Int):Observable<String>
+
+    @POST("good_delete4")
+    @FormUrlEncoded
+    fun recipe_good_delete4(@Field("user") user:String,
+                            @Field("recipe_id") recipe_id:Int):Observable<String>
+
+    @POST("good_first4")
+    @FormUrlEncoded
+    fun recipe_good_first4(@Field("user") user:String,
+                           @Field("recipe_id") recipe_id:Int):Observable<Int>
+
+    // 토크,삭제, 댓글 부분
+
+    @POST("menu4_delete")
+    @FormUrlEncoded
+    fun recipe_delete4(@Field("id") id:Int):Observable<String>
+
+    @POST("comment4")
+    @FormUrlEncoded
+    fun recipe_comment4(@Field("user") user:String,
+                        @Field("recipe_id") recipe_id:Int,
+                        @Field("text") text:String,
+                        @Field("date") date:String):Observable<Int>
+
+    @POST("comment_delete4")
+    @FormUrlEncoded
+    fun recipe_comment_delete4(@Field("id") id:Int):Observable<String>
+
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 메뉴 6 나의정보
+
 
 }

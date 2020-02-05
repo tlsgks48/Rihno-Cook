@@ -208,6 +208,7 @@ class recipe_detail : AppCompatActivity() {
                             //Toast.makeText(this@recipe_detail,message,Toast.LENGTH_SHORT).show()
                         })
                     val nextIntent = Intent(this, MainActivity::class.java)
+                    nextIntent.putExtra("번호",1)
                     startActivity(nextIntent)
 
                 }

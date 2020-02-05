@@ -22,6 +22,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".Talk_update">
+        </activity>
         <activity android:name=".Talk_upload">
         </activity>
         <activity android:name=".Video_comment">
@@ -53,11 +55,9 @@
         </activity>
         <activity android:name=".Menu3_list">
         </activity>
-        <activity android:name=".Menu2_list">
+        <activity android:name=".Menu6_list">
         </activity>
         <activity android:name=".Menu6">
-        </activity>
-        <activity android:name=".Menu5">
         </activity>
         <activity android:name=".Login">
         </activity>

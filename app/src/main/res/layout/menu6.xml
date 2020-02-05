@@ -5,9 +5,18 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              android:background="@android:color/holo_blue_light"
+              android:background="#C0C0C0"
               tools:context=".Menu6">
 
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_light"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    >
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -15,48 +24,79 @@
             android:layout_weight="7"
             android:orientation="vertical"
     >
-
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-
-                        android:layout_weight="1"
-                        android:text="프로필 설정\n"
-                        android:background="@android:color/darker_gray"
-                        android:gravity="center"
-
-                        android:textSize="30dp" />
-
-
-                <TextView
-                        android:id="@+id/profil_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textSize="20dp"
-                        android:layout_marginBottom="6dp"
-                        android:textColor="@android:color/black"
-
-                        android:text="ID" />
-
                 <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:background="@color/design_default_color_primary"
+                        android:layout_height="match_parent" android:layout_weight="1">
+
+                    <ImageView
+                            android:id="@+id/profil_imageView"
+                            android:layout_width="301dp"
+                            android:layout_height="250dp"
+                            android:layout_weight="1"
+                            android:scaleType="fitXY"
+                            android:background="@drawable/profil_image"/>
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:layout_weight="1">
+
+                        <TextView
+                                android:id="@+id/profil_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:gravity="center"
+                                android:textSize="20dp"
+                                android:textColor="@android:color/black"
+                                android:text="닉네임"/>
+
+                        <View
+                                android:layout_margin="2dp"
+                                android:background="#C0C0C0"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp" android:id="@+id/textView14"/>
+
+                        <TextView
+                                android:id="@+id/profil_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@android:color/darker_gray"
+                                android:gravity="center"
+                                android:textSize="18dp"
+                                android:layout_marginBottom="4dp"
+
+                                android:text="나의소개를 작성해주세요" />
+                        <View
+                                android:layout_margin="3dp"
+                                android:background="#C0C0C0"
+                                android:layout_width="match_parent"
+                                android:layout_height="2dp" android:id="@+id/textView142"/>
+                        <ImageView
+                                android:clickable="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp" app:srcCompat="@drawable/create"
+                                android:id="@+id/profil_create_text" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+<!--                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="12dp"
                         android:orientation="horizontal">
-
-
                     <TextView
                             android:text="현재 상태"
                             android:textColor="@android:color/white"
@@ -73,64 +113,153 @@
                             android:layout_height="match_parent"
                             android:layout_margin="4dp"
                             android:layout_weight="1" />
+                </LinearLayout>-->
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:layout_weight="1">
+
+                    <LinearLayout
+                            android:layout_margin="4dp"
+                            android:background="@android:color/holo_green_dark"
+                            android:id="@+id/save1"
+                            android:clickable="true"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:layout_weight="1">
+
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s1_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="27dp"
+                                android:text="0\n"
+                                android:textColor="@android:color/holo_orange_light"
+                                android:layout_margin="2dp"
+                                android:textSize="20dp"/>
+
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="레시피\n"
+                                android:textColor="@android:color/white"
+                                android:layout_margin="2dp"
+                                android:textSize="25dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_margin="4dp"
+                            android:background="@android:color/holo_blue_light"
+                            android:clickable="true"
+                            android:id="@+id/save2"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:layout_weight="1">
+
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s2_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="27dp"
+                                android:text="0\n"
+                                android:textColor="@android:color/holo_orange_light"
+                                android:layout_margin="2dp"
+                                android:textSize="20dp"/>
+
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="쿡tv\n"
+                                android:textColor="@android:color/white"
+                                android:layout_margin="2dp"
+                                android:textSize="25dp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
-
-                <ImageView
-                        android:id="@+id/profil_imageView"
-                        android:layout_width="411dp"
-                        android:layout_height="220dp"
-                        android:layout_weight="1"
-                        android:scaleType="fitXY"
-                        android:background="@drawable/profil_image"/>
-
-                <TextView
-                        android:id="@+id/profil_picture_select"
+                <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textSize="30dp"
-                        android:clickable="true"
-                        android:layout_marginBottom="30dp"
-                        android:background="@color/design_default_color_primary"
-                        android:text="사진 선택" />
+                        android:layout_height="match_parent" android:layout_weight="1">
 
-                <TextView
-                        android:id="@+id/Logout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clickable="true"
-                        android:text="로그아웃\n"
-                        android:textColor="@android:color/white"
-                        android:layout_margin="8dp"
-                        android:textSize="20dp" />
+                    <LinearLayout
+                            android:layout_margin="4dp"
+                            android:background="@android:color/holo_blue_light"
+                            android:clickable="true"
+                            android:id="@+id/save3"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:layout_weight="1">
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s3_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="27dp"
+                                android:text="0\n"
+                                android:textColor="@android:color/holo_orange_light"
+                                android:layout_margin="2dp"
+                                android:textSize="20dp"/>
 
-                <TextView
-                        android:id="@+id/profil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clickable="true"
-                        android:text="프로필 수정\n"
-                        android:textColor="@android:color/white"
-                        android:layout_margin="8dp"
-                        android:textSize="20dp" />
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="댓글\n"
+                                android:textColor="@android:color/white"
+                                android:layout_margin="2dp"
+                                android:textSize="25dp" />
 
-                <TextView
-                        android:id="@+id/LogDistroy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clickable="true"
-                        android:text="회원 탈퇴\n"
-                        android:textColor="@android:color/white"
-                        android:layout_margin="8dp"
-                        android:textSize="20dp" />
+                    </LinearLayout>
+                    <LinearLayout
+                            android:layout_margin="4dp"
+                            android:background="@android:color/holo_green_dark"
+                            android:clickable="true"
+                            android:id="@+id/save4"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" android:layout_weight="1">
 
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s4_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="27dp"
+                                android:text="0\n"
+                                android:textColor="@android:color/holo_orange_light"
+                                android:layout_margin="2dp"
+                                android:textSize="20dp"/>
 
-
+                        <TextView
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:id="@+id/profil_s4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="토크\n"
+                                android:textColor="@android:color/white"
+                                android:layout_margin="2dp"
+                                android:textSize="25dp" />
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
-
-
         </ScrollView>
     </LinearLayout>
 

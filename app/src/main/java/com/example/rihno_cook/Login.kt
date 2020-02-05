@@ -1,5 +1,6 @@
 package com.example.rihno_cook
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
 import android.content.Intent
@@ -12,6 +13,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Presenter.ILoginPresenter
 import com.example.rihno_cook.Presenter.LoginPresenter
 import com.example.rihno_cook.Retrofit.INodeJS
@@ -35,17 +37,14 @@ class Login : AppCompatActivity(), ILoginView {
     lateinit var myAPI:INodeJS
     var compositeDisposable = CompositeDisposable()
 
-   //  public var context: Context? = null
-
     var check_name : String = ""
-
     lateinit var context: Context
-
     init{
         instance = this
     }
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         private var instance: Login? = null
         fun applicationContext() : Context {
             return instance!!.applicationContext
@@ -65,6 +64,9 @@ class Login : AppCompatActivity(), ILoginView {
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
+        // test
+        //Common.gtest1(myAPI.loginUser(edit_email.text.toString(),edit_password.text.toString()))
+
         //Event
         login_button.setOnClickListener {
             login(edit_email.text.toString(),edit_password.text.toString())
@@ -82,20 +84,6 @@ class Login : AppCompatActivity(), ILoginView {
             register() // edit_email.text.toString(),edit_password.text.toString()
         }
 
-/*         var sendButton = findViewById<Button>(R.id.login_button)
-        sendButton.setOnClickListener {
-            //입력값을 토스트로 띄운다.
-            Toast.makeText(this,"${editText.text}님 반갑습니다.", Toast.LENGTH_LONG).show()
-
-            //resutView.setText("${editText.text}님 반갑습니다.")
-            //에디터텍스트값을 비운다.
-            //editText.setText("")
-
-            //키보드 패널 숨기기
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(editText.windowToken,0)
-        }*/
-
     }
 
     private fun register() { // email: String, password: String
@@ -112,7 +100,6 @@ class Login : AppCompatActivity(), ILoginView {
             .onNegative{dialog, _ -> dialog.dismiss() }
             .setPositiveText("Register")
             .onPositive { _, _ ->
-
                 val edit_name = enter_name_view.findViewById<View>(R.id.edit_name) as EditText
                 val edit_dial_email = enter_name_view.findViewById<View>(R.id.edit_dial_email) as EditText
                 val edit_dial_password = enter_name_view.findViewById<View>(R.id.edit_dial_password) as EditText
@@ -166,10 +153,5 @@ class Login : AppCompatActivity(), ILoginView {
 
         compositeDisposable.clear()
         super.onStop()
-    }
-
-    override fun onDestroy() {
-        compositeDisposable.clear()
-        super.onDestroy()
     }
 }

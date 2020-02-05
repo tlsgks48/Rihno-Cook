@@ -22,15 +22,13 @@ import com.example.rihno_cook.Retrofit.RetrofitClient3
 import com.example.rihno_cook.Utils.ProgressRequestBody
 import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_talk_upload.*
+import kotlinx.android.synthetic.main.activity_talk_update.*
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.Call
 import java.time.LocalDate
-import java.time.LocalDateTime
 
-class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
+class Talk_update : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     override fun onProgressUpdate(percentage: Int) {
         Toast.makeText(this,"업로딩 진행중", Toast.LENGTH_SHORT).show()
     }
@@ -53,20 +51,26 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_talk_upload)
+        setContentView(R.layout.activity_talk_update)
 
         //Service
         mService = apiUpload
-
         //Inot API
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
-        Talk_imageView_layout.visibility = View.INVISIBLE
+        Talk_update_imageView_layout.visibility = View.INVISIBLE
+        // 시작 채워넣기
+        if(Common.selected_talk!!.image != "") {
+            Glide.with(this).load(Common.selected_talk!!.image).into(Talk_update_imageView)
+            Talk_update_imageView_layout.visibility = View.VISIBLE
+        }
+
+        Talk_update_text.setText(Common.selected_talk!!.text)
 
         // 사진추가하기를 누른다면...
-        Talk_add.setOnClickListener {
-            var dialog = AlertDialog.Builder(this)
+        Talk_update_add.setOnClickListener {
+            val dialog = AlertDialog.Builder(this)
             dialog.setTitle("사진 선택")
             dialog.setMessage("사진을 촬영하시거나, 갤러리에서 원하시는 사진을 선택해주세요.")
             //pick a photo from gallery
@@ -108,13 +112,13 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         }
 
         // 사진제거하기
-        Talk_imageView_Delete.setOnClickListener {
-            Talk_imageView_layout.visibility = View.INVISIBLE
+        Talk_update_imageView_Delete.setOnClickListener {
+            Talk_update_imageView_layout.visibility = View.INVISIBLE
             fileUri = null
         }
 
         // 작성 버튼 누른다면
-        Talk_submit.setOnClickListener {uploadFile()}
+        Talk_update_submit.setOnClickListener {uploadFile()}
 
     }
 
@@ -125,13 +129,13 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             val body = MultipartBody.Part.createFormData("talkfile", file.name, requestFile)
 
             Thread(Runnable {
-                mService.TalkUploadFile(body, Common.selected_fame_user!!.name!!,Talk_text.text.toString(),onlyDate.toString()).enqueue(object: retrofit2.Callback<String> {
+                mService.TalkUpdateFile(body, Common.selected_talk!!.id,Talk_update_text.text.toString(),onlyDate.toString()).enqueue(object: retrofit2.Callback<String> {
                     override fun onFailure(call: Call<String>, t: Throwable) {
-                        Toast.makeText(this@Talk_upload, t.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@Talk_update, t.message, Toast.LENGTH_LONG).show()
                     }
                     override fun onResponse(call: Call<String>, response: Response<String>) {
-                        Toast.makeText(this@Talk_upload, "업로딩 성공!!", Toast.LENGTH_LONG).show()
-                        val nextIntent = Intent(this@Talk_upload, MainActivity::class.java)
+                        Toast.makeText(this@Talk_update, "업로딩 성공!!", Toast.LENGTH_LONG).show()
+                        val nextIntent = Intent(this@Talk_update, MainActivity::class.java)
                         nextIntent.putExtra("번호",3)
                         startActivity(nextIntent)
 
@@ -141,13 +145,13 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         }
         else {
             Thread(Runnable {
-                mService.TalkUploadFile2(Common.selected_fame_user!!.name!!,Talk_text.text.toString(),onlyDate.toString()).enqueue(object: retrofit2.Callback<String> {
+                mService.TalkUpdateFile2(Common.selected_talk!!.id,Talk_update_text.text.toString(),onlyDate.toString()).enqueue(object: retrofit2.Callback<String> {
                     override fun onFailure(call: Call<String>, t: Throwable) {
-                        Toast.makeText(this@Talk_upload, t.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@Talk_update, t.message, Toast.LENGTH_LONG).show()
                     }
                     override fun onResponse(call: Call<String>, response: Response<String>) {
-                        Toast.makeText(this@Talk_upload, "업로딩 성공!!", Toast.LENGTH_LONG).show()
-                        val nextIntent = Intent(this@Talk_upload, MainActivity::class.java)
+                        Toast.makeText(this@Talk_update, "업로딩 성공!!", Toast.LENGTH_LONG).show()
+                        val nextIntent = Intent(this@Talk_update, MainActivity::class.java)
                         nextIntent.putExtra("번호",3)
                         startActivity(nextIntent)
                     }
@@ -162,13 +166,13 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             && requestCode == PICK_IMAGE_REQUEST) {
             //display the photo on the imageview
             fileUri = data?.data
-            Glide.with(this).load(fileUri).into(Talk_imageView)
-            Talk_imageView_layout.visibility = View.VISIBLE
+            Glide.with(this).load(fileUri).into(Talk_update_imageView)
+            Talk_update_imageView_layout.visibility = View.VISIBLE
         }
         else if(resultCode == Activity.RESULT_OK
             && requestCode == PICK_PHOTO_REQUEST) {
-            Glide.with(this).load(fileUri).into(Talk_imageView)
-            Talk_imageView_layout.visibility = View.VISIBLE
+            Glide.with(this).load(fileUri).into(Talk_update_imageView)
+            Talk_update_imageView_layout.visibility = View.VISIBLE
         }
     }
 
