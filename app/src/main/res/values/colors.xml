@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="MacmorrisColorPalette1">#a6d683</color>
+    <color name="MacmorrisColorPalette2">#2ca388</color>
+    <color name="MacmorrisColorPalette3">#9eb3c2</color>
 </resources>

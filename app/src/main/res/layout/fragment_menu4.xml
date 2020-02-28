@@ -26,6 +26,8 @@
             android:layout_margin="16dp"
             android:clickable="true"
             android:src="@drawable/create_white"
+            android:backgroundTint="#9eb3c2"
+            app:borderWidth="0dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

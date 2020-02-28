@@ -12,7 +12,7 @@
             android:id="@+id/detail_recipe_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_light"
+            android:background="#a6d683"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
@@ -43,50 +43,131 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical">
 
-            <TextView
-                    android:gravity="center"
-                    android:layout_margin="3dp"
-                    android:textStyle="bold"
-                    android:text="레시피 제목"
-                    android:textSize="17dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" android:id="@+id/R_detail_title"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/textView3"
+                        android:background="#2ca388"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="레시피 제목" />
+
+                <TextView
+                        android:id="@+id/R_detail_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="레시피 제목"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+            </LinearLayout>
+
             <View
                     android:background="#C0C0C0"
                     android:layout_width="match_parent"
                     android:layout_height="1dp" android:id="@+id/textView17"/>
-            <TextView
-                    android:gravity="center"
-                    android:layout_margin="3dp"
-                    android:textStyle="bold"
-                    android:text="레시피 작성자"
-                    android:textSize="17dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" android:id="@+id/R_detail_writer"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="#9eb3c2"
+                        android:gravity="center"
+                        android:text="레시피 작성자"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/R_detail_writer"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="2dp"
+                        android:gravity="center"
+                        android:text="레시피 작성자"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+            </LinearLayout>
+
             <View
                     android:background="#C0C0C0"
                     android:layout_width="match_parent"
                     android:layout_height="1dp" android:id="@+id/textView16"/>
-            <TextView
-                    android:gravity="center"
-                    android:textStyle="italic"
-                    android:layout_margin="3dp"
-                    android:text="내용"
-                    android:textSize="16dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" android:id="@+id/R_detail_text"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="#2ca388"
+                        android:gravity="center"
+                        android:text="레시피 내용"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/R_detail_text"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="2dp"
+                        android:gravity="center"
+                        android:text="내용"
+                        android:textSize="16dp" />
+            </LinearLayout>
+
             <View
                     android:background="#C0C0C0"
                     android:layout_width="match_parent"
                     android:layout_height="1dp" android:id="@+id/textView15"/>
-            <TextView
-                    android:gravity="center"
-                    android:textStyle="italic"
-                    android:layout_margin="3dp"
-                    android:text="팁"
-                    android:textSize="16dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" android:id="@+id/R_detail_tip"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="#a6d683"
+                        android:gravity="center"
+                        android:text="레시피 팁"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:id="@+id/R_detail_tip"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="2dp"
+                        android:gravity="center"
+                        android:text="팁"
+                        android:textSize="16dp" />
+            </LinearLayout>
+
             <View
                     android:background="#C0C0C0"
                     android:layout_width="match_parent"
@@ -145,23 +226,14 @@
                     android:background="#C0C0C0"
                     android:layout_width="match_parent"
                     android:layout_height="5dp" android:id="@+id/textView33"/>
-           <!-- <LinearLayout
-                    android:orientation="horizontal"
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/R_detail_recyc_material2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <TextView
-                        android:layout_margin="3dp"
-                        android:text="관심"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/R_detail_good" android:layout_weight="1"/>
-                <TextView
-                        android:layout_margin="3dp"
-                        android:text="댓글"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/R_detail_comment" android:layout_weight="1"/>
-            </LinearLayout>-->
+                    android:layout_height="match_parent" />
+
             <TextView
-                    android:textColor="@android:color/holo_green_dark"
+                    android:textColor="#2ca388"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:layout_margin="3dp"
@@ -170,13 +242,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="50dp" android:id="@+id/textView34"/>
 
-            <android.support.v7.widget.RecyclerView
-                    android:layout_margin="3dp"
-                    android:id="@+id/R_detail_recyc_material"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                <android.support.v7.widget.RecyclerView
+                        android:id="@+id/R_detail_recyc_material"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="3dp" />
+
             <TextView
-                    android:textColor="@android:color/holo_green_dark"
+                    android:textColor="#a6d683"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:layout_margin="3dp"
@@ -193,6 +266,8 @@
                     android:id="@+id/R_detail_recyc_order"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
+
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

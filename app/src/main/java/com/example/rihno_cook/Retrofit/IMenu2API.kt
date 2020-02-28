@@ -53,4 +53,19 @@ interface IMenu2API {
     @FormUrlEncoded
     fun Menu6_Info(@Field("user") user:String?):Observable<ArrayList<Info>>
 
+    @POST("menu6_list")
+    @FormUrlEncoded
+    fun Menu6_list1(@Field("user") user:String?,
+                    @Field("id") id:Int):Observable<List<Recipe>>
+
+    @POST("menu6_list")
+    @FormUrlEncoded
+    fun Menu6_list2(@Field("user") user:String?,
+                    @Field("id") id:Int):Observable<ArrayList<Video>>
+
+    @POST("menu6_list")
+    @FormUrlEncoded
+    fun Menu6_list3(@Field("user") user:String?,
+                    @Field("id") id:Int):Observable<ArrayList<Talk>>
+
 }

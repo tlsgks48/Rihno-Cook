@@ -25,6 +25,7 @@ object Common {
     var selected_fame_user: LoginUser?=null
     var selected_video: Video?=null
     var selected_talk: Talk?=null
+    var selected_menu6:Int=0
 
     fun isConnectedToInternet(context: Context?) : Boolean {
         val cm = context!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

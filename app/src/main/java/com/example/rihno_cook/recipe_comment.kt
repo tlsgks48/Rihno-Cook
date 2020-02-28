@@ -18,6 +18,7 @@ import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_recipe_comment.*
 import java.time.LocalDate
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class recipe_comment : AppCompatActivity() {
 
@@ -42,6 +43,8 @@ class recipe_comment : AppCompatActivity() {
 
         // 현재날짜
         val onlyDate: LocalDateTime = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+        val formatted = onlyDate.format(formatter)
 
         //
         //Toast.makeText(this, "id는 "+ Common.selected_recipe!!.id+", 날짜는 "+onlyDate.toString()+", 유저는 "+ Common.selected_recipe_user!!.name, Toast.LENGTH_LONG).show()
@@ -64,13 +67,13 @@ class recipe_comment : AppCompatActivity() {
                                 Common.selected_recipe_user!!.name!!,
                                 Common.selected_recipe!!.id,
                                 Menu2_comment_comment.text.toString(),
-                                onlyDate.toString()
+                                formatted.toString()
                             )
                         )
                         Menu2_comment_recycler.adapter?.notifyDataSetChanged()
 
                         // 댓글 서버로 전송
-                        compositeDisposable.add(myAPI.recipe_comment(Common.selected_recipe_user!!.name!!, Common.selected_recipe!!.id, Menu2_comment_comment.text.toString(), onlyDate.toString())
+                        compositeDisposable.add(myAPI.recipe_comment(Common.selected_recipe_user!!.name!!, Common.selected_recipe!!.id, Menu2_comment_comment.text.toString(), formatted.toString())
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe{ Cid ->
@@ -95,14 +98,14 @@ class recipe_comment : AppCompatActivity() {
                                 Common.selected_recipe_user!!.name!!,
                                 Common.selected_recipe!!.id,
                                 Menu2_comment_comment.text.toString(),
-                                onlyDate.toString()
+                                formatted.toString()
                             )
                         )
                         Menu2_comment_recycler.adapter?.notifyDataSetChanged()
                         //Toast.makeText(this,""+commentList.get(commentList.size-1).id,Toast.LENGTH_SHORT).show()
 
                         // 댓글 서버로 전송
-                        compositeDisposable.add(myAPI.recipe_comment(Common.selected_recipe_user!!.name!!, Common.selected_recipe!!.id, Menu2_comment_comment.text.toString(), onlyDate.toString())
+                        compositeDisposable.add(myAPI.recipe_comment(Common.selected_recipe_user!!.name!!, Common.selected_recipe!!.id, Menu2_comment_comment.text.toString(), formatted.toString())
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                             .subscribe{ Cid ->

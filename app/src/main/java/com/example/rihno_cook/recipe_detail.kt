@@ -69,10 +69,10 @@ class recipe_detail : AppCompatActivity() {
         // Toast.makeText(this, "id는 "+ i, Toast.LENGTH_LONG).show()
 
         // 제목 ~ 팁
-        R_detail_title.setText("제목  :  "+Common.selected_recipe!!.name)
-        R_detail_writer.setText("작성자  :  "+Common.selected_recipe!!.user)
-        R_detail_text.setText("내용  :  "+Common.selected_recipe!!.text)
-        R_detail_tip.setText("팁/주의사항  :  "+Common.selected_recipe!!.tip)
+        R_detail_title.setText(Common.selected_recipe!!.name)
+        R_detail_writer.setText(Common.selected_recipe!!.user)
+        R_detail_text.setText(Common.selected_recipe!!.text)
+        R_detail_tip.setText(Common.selected_recipe!!.tip)
 
         // 카테고리 1~4
         R_detail_kind.setText(Common.selected_recipe!!.category1)

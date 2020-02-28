@@ -19,7 +19,7 @@
 
     <style name="TabTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!--배경-->
-        <item name="colorPrimary">#f5a623</item>
+        <item name="colorPrimary">#2ca388</item>
         <!--탭마 선택된 텍스트-->
         <item name="android:textColorPrimary">@android:color/white</item>
         <!--탭바 텍스트-->

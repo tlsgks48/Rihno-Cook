@@ -244,7 +244,7 @@ class RecipeUpload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 
             json = gson.toJson(UnitList)
 
-            // from json
+            // from json (json 형태로 제대로 되있나 확인)
             var UnitList2 = arrayListOf<Unit>()
             UnitList2 = gson.fromJson(json,object : TypeToken<ArrayList<Unit>>() {}.type)
             Recipe_material_title.setText("")

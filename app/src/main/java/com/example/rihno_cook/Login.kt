@@ -20,6 +20,7 @@ import com.example.rihno_cook.Retrofit.INodeJS
 import com.example.rihno_cook.Retrofit.RetrofitClient
 import com.example.rihno_cook.View.ILoginView
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
+import com.github.javiersantos.materialstyleddialogs.enums.Style
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -92,13 +93,14 @@ class Login : AppCompatActivity(), ILoginView {
             .inflate(R.layout.enter_name_layout,null)
 
         MaterialStyledDialog.Builder(this@Login)
-            .setTitle("Register")
+            .setTitle("회원가입")
             .setDescription("회원가입 정보를 입력하세요!")
             .setCustomView(enter_name_view)
-            .setIcon(R.drawable.profil_image)
-            .setNegativeText("Cancel")
+            .setHeaderColor(R.color.MacmorrisColorPalette2)
+            .setStyle(Style.HEADER_WITH_TITLE)
+            .setNegativeText("취소")
             .onNegative{dialog, _ -> dialog.dismiss() }
-            .setPositiveText("Register")
+            .setPositiveText("회원가입")
             .onPositive { _, _ ->
                 val edit_name = enter_name_view.findViewById<View>(R.id.edit_name) as EditText
                 val edit_dial_email = enter_name_view.findViewById<View>(R.id.edit_dial_email) as EditText

@@ -93,7 +93,6 @@ class Menu4 : Fragment() {
                 Toast.makeText(activity,"Please check your connection3",Toast.LENGTH_SHORT).show()
             }
         })
-
         // 작성하기 버튼 눌럿을때
         rootView?.menu4_WriteButton?.setOnClickListener {
             val nextIntent = Intent(activity, Talk_upload::class.java)

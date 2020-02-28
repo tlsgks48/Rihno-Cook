@@ -50,24 +50,30 @@ class Menu6 : AppCompatActivity() {
                     profil_s1_number.setText("" + menu6List[0].cnt)
                     profil_s2_number.setText("" + menu6List[1].cnt)
                     profil_s3_number.setText("" + menu6List[2].cnt)
-                    profil_s4_number.setText("" + menu6List[3].cnt)
+                    //profil_s4_number.setText("" + menu6List[3].cnt)
                     profil_s5_number.setText("" + menu6List[4].cnt)
                     //Toast.makeText(this,"첫 : "+menu6List[0].cnt+" 둘 : "+menu6List[1].cnt,Toast.LENGTH_SHORT).show()
 
+                    // 레시피
                     save1.setOnClickListener {
-                        Menu6_list_Info(menu6List[0].cnt)
+                        Menu6_list_Info(menu6List[0].cnt,1)
                     }
+                    // 쿡tv
                     save2.setOnClickListener {
-                        Menu6_list_Info(menu6List[1].cnt)
+                        Menu6_list_Info(menu6List[1].cnt,2)
                     }
+                    // 토크
                     save3.setOnClickListener {
-                        Menu6_list_Info(menu6List[2].cnt)
+                        Menu6_list_Info(menu6List[2].cnt,3)
                     }
-                    save4.setOnClickListener {
-                        Menu6_list_Info(menu6List[3].cnt)
-                    }
+                    // 댓글
+
+/*                    save4.setOnClickListener {
+                        Menu6_list_Info(menu6List[3].cnt,4)
+                    }*/
+                    // 나의관심
                     save5.setOnClickListener {
-                        Menu6_list_Info(menu6List[4].cnt)
+                        Menu6_list_Info(menu6List[4].cnt,5)
                     }
                 },
                     { thr ->
@@ -103,7 +109,8 @@ class Menu6 : AppCompatActivity() {
     }
     // 메인끝.
 
-    fun Menu6_list_Info(cnt:Int) {
+    fun Menu6_list_Info(cnt:Int, a:Int) {
+        Common.selected_menu6 = a
         if(cnt > 0) {
             val nextIntent = Intent(this, Menu6_list::class.java)
             startActivity(nextIntent)
