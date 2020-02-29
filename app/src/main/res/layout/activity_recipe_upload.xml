@@ -10,18 +10,39 @@
         android:focusableInTouchMode="true"
         tools:context=".RecipeUpload">
 
-    <TextView
-            android:text="작성하기"
-            android:background="@android:color/holo_blue_light"
-            android:textColor="@android:color/white"
-            android:clickable="true"
-            android:padding="4dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:gravity="right"
+    <LinearLayout
+            android:background="#a6d683"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/recipe_submit"/>
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_margin="3dp"
+                android:padding="4dp"
+                android:textSize="20dp"
+                android:text="레시피 - 업로드"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView10"
+                android:layout_weight="1"/>
+
+        <TextView
+                android:text="작성하기"
+                android:textColor="@android:color/white"
+                android:clickable="true"
+                android:padding="4dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="right"
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/recipe_submit"/>
+
+    </LinearLayout>
 
     <ScrollView
             android:layout_width="match_parent"
@@ -32,10 +53,10 @@
 
             <TextView
                     android:text="레시피 제목"
-                    android:textSize="20dp"
-                    android:background="#C0C0C0"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:textStyle="bold"
-                    android:padding="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView2"/>
             <EditText
@@ -47,10 +68,10 @@
                     android:ems="10"
                     android:id="@+id/Recipe_title"/>
             <TextView
-                    android:background="@android:color/darker_gray"
                     android:text="요리 대표 사진"
-                    android:padding="3dp"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView22"/>
@@ -64,11 +85,11 @@
                     app:srcCompat="@drawable/cam_image2"
                     android:id="@+id/recipe_upload_image1"/>
             <TextView
-                    android:background="@android:color/darker_gray"
                     android:text="요리내용"
-                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:padding="3dp"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView7"/>
             <EditText
@@ -79,11 +100,11 @@
                     android:ems="10"
                     android:id="@+id/Recipe_text"/>
             <TextView
-                    android:background="#C0C0C0"
                     android:text="카테고리"
-                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:padding="3dp"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView8"/>
             <Spinner
@@ -96,11 +117,11 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/spinner2"/>-->
             <TextView
-                    android:background="#C0C0C0"
                     android:text="요리정보"
-                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:padding="3dp"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView9"/>
 
@@ -159,11 +180,11 @@
             </LinearLayout>
 
             <TextView
-                    android:background="#C0C0C0"
                     android:text="요리재료"
-                    android:textSize="20dp"
                     android:textStyle="bold"
-                    android:padding="3dp"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView15"/>
@@ -197,7 +218,7 @@
                         android:id="@+id/Material_spinner"
                         android:layout_weight="1"/>
                 <Button
-                        android:background="@android:color/holo_blue_light"
+                        android:background="@drawable/btton_round"
                         android:layout_weight="1.1"
                         android:text="재료추가"
                         android:layout_width="match_parent"
@@ -215,73 +236,13 @@
             </android.support.v7.widget.RecyclerView>
 
             <TextView
-                    android:background="#C0C0C0"
                     android:text="요리 순서"
-                    android:padding="3dp"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/textView11"/>
-
-<!--            <LinearLayout
-                    android:padding="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        android:hint="예) 1. 냉동된 고기는 물에 담가서 녹여주세요."
-                        android:ems="10"
-                        android:id="@+id/Recipe_order_text1"
-                        android:layout_weight="1"/>
-                <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/add_black"
-                        android:id="@+id/Recipe_order_imageView1"
-                        android:layout_weight="2"/>
-            </LinearLayout>
-
-            <LinearLayout
-                    android:padding="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        android:hint="예) 2. 해동 후 준비된 양념을 첨가하세요."
-                        android:ems="10"
-                        android:id="@+id/Recipe_order_text2"
-                        android:layout_weight="1"/>
-                <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/add_black"
-                        android:id="@+id/Recipe_order_imageView2"
-                        android:layout_weight="2"/>
-            </LinearLayout>
-
-            <LinearLayout
-                    android:padding="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
-                        android:hint="예) 3. 고기를 볶아주세요.."
-                        android:ems="10"
-                        android:id="@+id/Recipe_order_text3"
-                        android:layout_weight="1"/>
-                <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/add_black"
-                        android:id="@+id/Recipe_order_imageView3"
-                        android:layout_weight="2"/>
-            </LinearLayout>-->
 
             <android.support.v7.widget.RecyclerView
                     android:id="@+id/Recipe_order_recycler"
@@ -290,41 +251,17 @@
 
             </android.support.v7.widget.RecyclerView>
             <Button
+                    android:background="@drawable/btton_round"
                     android:text="요리순서 추가"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/Recipe_order_add_button"/>
 
-            <!--<TextView
-                    android:text="완성사진"
-                    android:padding="3dp"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView12"/>
-            <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/add_black"
-                        android:id="@+id/cook_finish_imageView1"
-                        android:layout_weight="1"/>
-                <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/add_black"
-                        android:id="@+id/cook_finish_imageView2"
-                        android:layout_weight="1"/>
-            </LinearLayout>-->
             <TextView
-                    android:background="#C0C0C0"
                     android:text="요리팁/주의사항"
-                    android:padding="3dp"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
+                    android:background="#9eb3c2"
+                    android:padding="6dp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

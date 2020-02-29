@@ -14,12 +14,12 @@
             android:id="@+id/menu6_list_name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:gravity="center"
             android:textColor="@android:color/white"
-            android:background="@android:color/holo_blue_light"
+            android:background="#a6d683"
             android:textSize="20dp"
-            android:layout_marginBottom="3dp"
-            android:text="TextView" />
+            android:padding="4dp"
+            android:layout_margin="3dp"
+            android:text="레시피들" />
 
     <ScrollView
             android:layout_width="match_parent"

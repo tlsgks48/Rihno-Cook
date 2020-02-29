@@ -14,7 +14,7 @@
             android:id="@+id/detail_talk_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_light"
+            android:background="#a6d683"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
@@ -79,6 +79,7 @@
                 android:inputType="textPersonName" />
 
         <Button
+                android:background="@drawable/btton_round"
                 android:id="@+id/detail_talk_comment_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

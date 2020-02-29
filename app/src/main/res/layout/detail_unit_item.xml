@@ -18,6 +18,7 @@
     <TextView
             android:textSize="16dp"
             android:text="단위"
+            android:gravity="right"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/Detail_unit_item_unit" android:layout_weight="1"/>
 

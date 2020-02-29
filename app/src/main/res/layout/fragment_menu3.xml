@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <Button
+<!--        <Button
                 android:text="레시피 작성하기"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -19,8 +19,9 @@
                 android:layout_margin="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/video_uploade_button"/>
+                android:id="@+id/video_uploade_button"/>-->
         <android.support.v4.widget.SwipeRefreshLayout
+                android:layout_marginTop="8dp"
                 android:layout_marginRight="1dp"
                 android:id="@+id/video_swipe_refresh"
                 android:layout_width="match_parent"
@@ -36,5 +37,16 @@
         </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/video_uploade_button"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:src="@drawable/create_white"
+            android:backgroundTint="#2ca388"
+            app:borderWidth="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 </FrameLayout>

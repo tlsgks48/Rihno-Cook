@@ -12,7 +12,7 @@
             android:id="@+id/profile_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_light"
+            android:background="#a6d683"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
@@ -36,7 +36,7 @@
                         android:layout_marginBottom="3dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:background="@color/design_default_color_primary"
+                        android:background="#9eb3c2"
                         android:layout_height="match_parent" android:layout_weight="1">
 
                     <ImageView
@@ -45,7 +45,8 @@
                             android:layout_height="250dp"
                             android:layout_weight="1"
                             android:scaleType="fitXY"
-                            android:background="@drawable/new_profil_image"/>
+                            app:srcCompat="@drawable/profil6666"
+                            />
 
                     <LinearLayout
                             android:orientation="vertical"
@@ -57,7 +58,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:gravity="center"
-                                android:textSize="25dp"
+                                android:textSize="20dp"
                                 android:textColor="@android:color/black"
                                 android:text="닉네임"/>
 
@@ -72,11 +73,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:textColor="@android:color/darker_gray"
                                 android:gravity="center"
                                 android:textSize="18dp"
                                 android:layout_marginBottom="4dp"
-
                                 android:text="나의소개를 작성해주세요" />
                         <View
                                 android:layout_margin="3dp"
@@ -123,7 +122,7 @@
 
                     <LinearLayout
                             android:layout_margin="4dp"
-                            android:background="@android:color/holo_green_dark"
+                            android:background="#2ca388"
                             android:id="@+id/save1"
                             android:clickable="true"
                             android:orientation="vertical"
@@ -157,7 +156,7 @@
 
                     <LinearLayout
                             android:layout_margin="4dp"
-                            android:background="@android:color/holo_blue_light"
+                            android:background="#a6d683"
                             android:clickable="true"
                             android:id="@+id/save2"
                             android:orientation="vertical"
@@ -197,7 +196,7 @@
 
                     <LinearLayout
                             android:layout_margin="4dp"
-                            android:background="@android:color/holo_blue_light"
+                            android:background="#a6d683"
                             android:clickable="true"
                             android:id="@+id/save3"
                             android:orientation="vertical"
@@ -261,7 +260,7 @@
                     </LinearLayout>-->
                     <LinearLayout
                             android:layout_margin="4dp"
-                            android:background="@android:color/holo_green_dark"
+                            android:background="#2ca388"
                             android:id="@+id/save5"
                             android:clickable="true"
                             android:orientation="vertical"

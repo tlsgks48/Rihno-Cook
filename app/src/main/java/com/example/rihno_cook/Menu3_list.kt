@@ -46,7 +46,7 @@ class Menu3_list : AppCompatActivity() {
 
         //
         // toolbar
-        detail_video_toolbar.title = "레시피 상세보기"
+        detail_video_toolbar.title = "쿡TV 상세보기"
         setSupportActionBar(detail_video_toolbar)
         detail_video_toolbar.hideOverflowMenu()
 
@@ -58,9 +58,9 @@ class Menu3_list : AppCompatActivity() {
        // menu3_list_videoView.start()
 
         // 제목 ~ 내용
-        menu3_list_title.setText("제목  :  "+Common.selected_video!!.name)
-        menu3_list_writer.setText("작성자  :  "+Common.selected_video!!.user)
-        menu3_list_text.setText("내용  :  "+Common.selected_video!!.text)
+        menu3_list_title.setText(Common.selected_video!!.name)
+        menu3_list_writer.setText(Common.selected_video!!.user)
+        menu3_list_text.setText(Common.selected_video!!.text)
 
        //Glide.with(this).load("http://192.168.56.1:3000/달래장.mp4").into(menu3_list_imageView)
 

@@ -24,6 +24,7 @@
                 android:inputType="textPersonName" />
 
         <Button
+                android:background="@drawable/btton_round"
                 android:id="@+id/Menu3_comment_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -216,6 +216,33 @@
                     android:background="#C0C0C0"
                     android:layout_width="match_parent"
                     android:layout_height="1dp" android:id="@+id/textView12"/>
+
+            <TextView
+                    android:textColor="#2ca388"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:textSize="20dp"
+                    android:text="재료"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp" android:id="@+id/textView34"/>
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/R_detail_recyc_material"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="24dp"
+                    />
+
+            <TextView
+                    android:background="#C0C0C0"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_height="5dp" android:id="@+id/textView19"/>
+
             <ImageView
                     android:layout_margin="2dp"
                     android:scaleType="fitXY"
@@ -227,32 +254,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="5dp" android:id="@+id/textView33"/>
 
-            <android.support.v7.widget.RecyclerView
-                    android:id="@+id/R_detail_recyc_material2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
 
-            <TextView
-                    android:textColor="#2ca388"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    android:layout_margin="3dp"
-                    android:textSize="20dp"
-                    android:text="재료"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp" android:id="@+id/textView34"/>
-
-                <android.support.v7.widget.RecyclerView
-                        android:id="@+id/R_detail_recyc_material"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="3dp" />
 
             <TextView
                     android:textColor="#a6d683"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:layout_margin="3dp"
+                    android:layout_margin="4dp"
                     android:textSize="20dp"
                     android:text="요리 순서"
                     android:layout_width="wrap_content"
