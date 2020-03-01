@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.rihno_cook.Adapter.Menu3Adapter
 import com.example.rihno_cook.Common.Common
+import com.example.rihno_cook.Model.Video
 import com.example.rihno_cook.Retrofit.IMenu2API
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -58,7 +59,7 @@ class Menu3 : Fragment() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ menu2List ->
-                        rootView.video_recycler_menu3.adapter = Menu3Adapter(activity, menu2List)
+                        rootView.video_recycler_menu3.adapter = Menu3Adapter(activity, menu2List,1)
                         rootView.video_swipe_refresh.isRefreshing = false
                     },
                         {thr ->
@@ -79,7 +80,7 @@ class Menu3 : Fragment() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ menu2List ->
-                        rootView.video_recycler_menu3.adapter = Menu3Adapter(activity, menu2List)
+                        rootView.video_recycler_menu3.adapter = Menu3Adapter(activity, menu2List,1)
                         rootView.video_swipe_refresh.isRefreshing = false
                     },
                         {thr ->

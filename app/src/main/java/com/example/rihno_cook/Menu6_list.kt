@@ -51,8 +51,8 @@ class Menu6_list : AppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ menu2List ->
-                    menu6_list_recycler.layoutManager = GridLayoutManager(this,2)
-                    menu6_list_recycler.adapter = Menu3Adapter(this, menu2List)
+                    menu6_list_recycler.layoutManager = LinearLayoutManager(this)
+                    menu6_list_recycler.adapter = Menu3Adapter(this, menu2List,2)
                 },
                     {thr ->
                         Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()

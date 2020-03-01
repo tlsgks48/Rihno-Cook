@@ -8,4 +8,5 @@ class Video {
     var text:String?=null
 
     constructor()
+
 }
