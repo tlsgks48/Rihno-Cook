@@ -1,6 +1,7 @@
 package com.example.rihno_cook.Retrofit
 
 import com.example.rihno_cook.Model.*
+import com.google.gson.JsonArray
 import io.reactivex.Observable
 import retrofit2.http.*
 
@@ -53,6 +54,7 @@ interface IMenu2API {
     @FormUrlEncoded
     fun Menu6_Info(@Field("user") user:String?):Observable<ArrayList<Info>>
 
+    /*
     @POST("menu6_list")
     @FormUrlEncoded
     fun Menu6_list1(@Field("user") user:String?,
@@ -67,5 +69,19 @@ interface IMenu2API {
     @FormUrlEncoded
     fun Menu6_list3(@Field("user") user:String?,
                     @Field("id") id:Int):Observable<ArrayList<Talk>>
+
+     */
+
+    @POST("menu6_list2")
+    @FormUrlEncoded
+    fun Menu6_list0(@Field("user") user:String?):Observable<ArrayList<JsonArray>>
+
+    @POST("menu6_list3")
+    @FormUrlEncoded
+    fun Menu6_list_good(@Field("user") user:String?):Observable<ArrayList<JsonArray>>
+
+    @POST("menu6_list4")
+    @FormUrlEncoded
+    fun Menu6_list_good_list(@Field("id") id:Int):Observable<ArrayList<JsonArray>>
 
 }
