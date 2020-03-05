@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.rihno_cook.Adapter.Menu3Adapter
 import com.example.rihno_cook.Adapter.Menu4Adapter
@@ -63,8 +64,16 @@ class Menu6_list : AppCompatActivity() {
         menu6_list_recycler2.setHasFixedSize(true)
         menu6_list_recycler3.setHasFixedSize(true)
 
+        // 나의 관심일때 빼고는 안보이기 위해서.
+        menu6_list_Text1.visibility = View.GONE
+        menu6_list_Text2.visibility = View.GONE
+        menu6_list_Text3.visibility = View.GONE
+
+        // 각 버튼에 맞는 화면을 출력...
         if(Common.selected_menu6 == 1){
             menu6_list_name.setText("레시피")
+
+            // 서버에서 JsonArray형식으로 불러와서 각 List에 맞게 출력한다.
             compositeDisposable3.add(iMenu2API.Menu6_list0(Common.selected_fame_user!!.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -74,24 +83,12 @@ class Menu6_list : AppCompatActivity() {
                     Rlist = gson.fromJson(json, object : TypeToken<ArrayList<Recipe>>() {}.type)
 
                     menu6_list_recycler.layoutManager = LinearLayoutManager(this)
-                    menu6_list_recycler.adapter = MyMenu2Adapter(this, Rlist)
-                },
-                    {thr ->
-                        Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
-                    }))
-            /*
-            compositeDisposable3.add(iMenu2API.Menu6_list1(Common.selected_fame_user!!.name,0)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ menu2List ->
-                    menu6_list_recycler.layoutManager = GridLayoutManager(this,2)
-                    menu6_list_recycler.adapter = MyMenu2Adapter(this, menu2List)
+                    menu6_list_recycler.adapter = MyMenu2Adapter(this, Rlist,2)
                 },
                     {thr ->
                         Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
                     }))
 
-             */
         }else if(Common.selected_menu6 == 2){
             menu6_list_name.setText("쿡TV")
             compositeDisposable3.add(iMenu2API.Menu6_list0(Common.selected_fame_user!!.name)
@@ -108,21 +105,9 @@ class Menu6_list : AppCompatActivity() {
                     {thr ->
                         Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
                     }))
-            /*
-            compositeDisposable3.add(iMenu2API.Menu6_list2(Common.selected_fame_user!!.name,1)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ menu2List ->
-                    menu6_list_recycler.layoutManager = LinearLayoutManager(this)
-                    menu6_list_recycler.adapter = Menu3Adapter(this, menu2List,2)
-                },
-                    {thr ->
-                        Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
-                    }))
 
-             */
         }else if(Common.selected_menu6 == 3){
-            menu6_list_name.setText("토크")
+            menu6_list_name.setText("쿡토크")
             compositeDisposable3.add(iMenu2API.Menu6_list0(Common.selected_fame_user!!.name)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -132,27 +117,18 @@ class Menu6_list : AppCompatActivity() {
                     Tlist = gson.fromJson(json, object : TypeToken<ArrayList<Talk>>() {}.type)
 
                     menu6_list_recycler.layoutManager = LinearLayoutManager(this)
-                    menu6_list_recycler.adapter = Menu4Adapter(this, Tlist)
-                },
-                    {thr ->
-                        Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
-                    }))
-            /*
-            compositeDisposable3.add(iMenu2API.Menu6_list3(Common.selected_fame_user!!.name,2)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ menu2List ->
-                    menu6_list_recycler.layoutManager = LinearLayoutManager(this)
-                    menu6_list_recycler.adapter = Menu4Adapter(this, menu2List)
+                    menu6_list_recycler.adapter = Menu4Adapter(this, Tlist,2)
                 },
                     {thr ->
                         Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
                     }))
 
-             */
         }else if(Common.selected_menu6 == 4){
             menu6_list_name.setText("댓글")
         }else if(Common.selected_menu6 == 5){
+            menu6_list_Text1.visibility = View.VISIBLE
+            menu6_list_Text2.visibility = View.VISIBLE
+            menu6_list_Text3.visibility = View.VISIBLE
             menu6_list_name.setText("나의 관심")
             compositeDisposable3.add(iMenu2API.Menu6_list_good(Common.selected_fame_user!!.name)
                 .subscribeOn(Schedulers.io())
@@ -178,7 +154,7 @@ class Menu6_list : AppCompatActivity() {
                                 Rlist3.add(Rlist2.get(0))
 
                                 menu6_list_recycler.layoutManager = LinearLayoutManager(this)
-                                menu6_list_recycler.adapter = MyMenu2Adapter(this, Rlist3)
+                                menu6_list_recycler.adapter = MyMenu2Adapter(this, Rlist3,2)
                             },
                                 {thr ->
                                     Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -216,7 +192,7 @@ class Menu6_list : AppCompatActivity() {
                                 Tlist3.add(Tlist2.get(0))
 
                                 menu6_list_recycler3.layoutManager = LinearLayoutManager(this)
-                                menu6_list_recycler3.adapter = Menu4Adapter(this, Tlist3)
+                                menu6_list_recycler3.adapter = Menu4Adapter(this, Tlist3,2)
                             },
                                 {thr ->
                                     Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()

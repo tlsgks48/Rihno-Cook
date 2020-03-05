@@ -2,6 +2,7 @@ package com.example.rihno_cook.Retrofit
 
 import com.example.rihno_cook.Model.*
 import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import io.reactivex.Observable
 import retrofit2.http.*
 
@@ -50,27 +51,13 @@ interface IMenu2API {
     @FormUrlEncoded
     fun commentList4(@Field("recipe_id") recipe_id:Int):Observable<ArrayList<Comment>>
 
+    @POST("menu6_user")
+    @FormUrlEncoded
+    fun Menu6_User_Info(@Field("user") user:String?):Observable<ArrayList<JsonArray>>
+
     @POST("menu6_get")
     @FormUrlEncoded
     fun Menu6_Info(@Field("user") user:String?):Observable<ArrayList<Info>>
-
-    /*
-    @POST("menu6_list")
-    @FormUrlEncoded
-    fun Menu6_list1(@Field("user") user:String?,
-                    @Field("id") id:Int):Observable<List<Recipe>>
-
-    @POST("menu6_list")
-    @FormUrlEncoded
-    fun Menu6_list2(@Field("user") user:String?,
-                    @Field("id") id:Int):Observable<ArrayList<Video>>
-
-    @POST("menu6_list")
-    @FormUrlEncoded
-    fun Menu6_list3(@Field("user") user:String?,
-                    @Field("id") id:Int):Observable<ArrayList<Talk>>
-
-     */
 
     @POST("menu6_list2")
     @FormUrlEncoded

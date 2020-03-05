@@ -58,7 +58,7 @@ class Menu4 : Fragment() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ menu2List ->
-                        rootView.talk_recycler_menu4.adapter = Menu4Adapter(activity, menu2List)
+                        rootView.talk_recycler_menu4.adapter = Menu4Adapter(activity, menu2List,1)
                         rootView.talk_swipe_refresh.isRefreshing = false
                     },
                         {thr ->
@@ -80,7 +80,7 @@ class Menu4 : Fragment() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ menu2List ->
-                        rootView.talk_recycler_menu4.adapter = Menu4Adapter(activity, menu2List)
+                        rootView.talk_recycler_menu4.adapter = Menu4Adapter(activity, menu2List,1)
                         rootView.talk_swipe_refresh.isRefreshing = false
                     },
                         {thr ->

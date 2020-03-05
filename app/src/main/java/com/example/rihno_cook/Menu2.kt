@@ -50,34 +50,14 @@ class Menu2 : Fragment() {
         var rootView = inflater.inflate(R.layout.fragment_menu2, container, false)
         iMenu2API = Common.api
 
-
         rootView?.recycler_menu2?.setHasFixedSize(true)
         rootView?.recycler_menu2?.layoutManager = GridLayoutManager(activity!!,2)
 
+        // 새로고침 할 경우
         rootView?.swipe_refresh?.setOnRefreshListener {
             if(Common.isConnectedToInternet(activity))
                 {
-                    val dialog = SpotsDialog.Builder()
-                        .setContext(activity)
-                        .setMessage("Pleas wait.....")
-                        .build()
-                    if (!rootView.swipe_refresh.isRefreshing)
-                        dialog.show()
-                    compositeDisposable.add(iMenu2API.menu2List
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe({ menu2List ->
-                            rootView.recycler_menu2.adapter = MyMenu2Adapter(activity, menu2List)
-                            if (!rootView.swipe_refresh.isRefreshing)
-                                dialog.dismiss()
-                            rootView.swipe_refresh.isRefreshing = false
-                        },
-                            {thr ->
-                                Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
-                                if (!rootView.swipe_refresh.isRefreshing)
-                                    dialog.dismiss()
-                                rootView.swipe_refresh.isRefreshing = false
-                            }))
+                    fetchMenu2()
                 }
                 else
             {
@@ -88,37 +68,13 @@ class Menu2 : Fragment() {
         rootView?.swipe_refresh?.post(Runnable {
             if(Common.isConnectedToInternet(activity))
             {
-                //fetchMenu2()
-                val dialog = SpotsDialog.Builder()
-                    .setContext(activity)
-                    .setMessage("Pleas wait...")
-                    .build()
-                if (!rootView.swipe_refresh.isRefreshing)
-                    dialog.show()
-                compositeDisposable.add(iMenu2API.menu2List
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe({ menu2List ->
-                        rootView.recycler_menu2.adapter = MyMenu2Adapter(activity, menu2List)
-                        if (!rootView.swipe_refresh.isRefreshing)
-                            dialog.dismiss()
-                        rootView.swipe_refresh.isRefreshing = false
-                        //
-                    },
-                        {thr ->
-                            Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
-                            if (!rootView.swipe_refresh.isRefreshing)
-                                dialog.dismiss()
-                            rootView.swipe_refresh.isRefreshing = false
-                        }))
+                fetchMenu2()
             }
             else
             {
                 Toast.makeText(activity,"Please check your connection2",Toast.LENGTH_SHORT).show()
             }
         })
-
-
 
         rootView.recipe_uploade_button.setOnClickListener {
             val nextIntent = Intent(activity, RecipeUpload::class.java)
@@ -139,7 +95,7 @@ class Menu2 : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ menu2List ->
-                recycler_menu2.adapter = MyMenu2Adapter(activity, menu2List)
+                recycler_menu2.adapter = MyMenu2Adapter(activity, menu2List,1)
                 if (!swipe_refresh.isRefreshing)
                     dialog.dismiss()
                 swipe_refresh.isRefreshing = false

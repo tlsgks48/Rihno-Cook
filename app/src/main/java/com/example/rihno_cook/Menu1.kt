@@ -91,7 +91,7 @@ class Menu1 : Fragment() {
                                 .subscribeOn(Schedulers.io())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .subscribe({ menu2List ->
-                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List)
+                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List,1)
                                 },
                                     {thr ->
                                         Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -102,7 +102,7 @@ class Menu1 : Fragment() {
                                 .subscribeOn(Schedulers.io())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .subscribe({ menu2List ->
-                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List)
+                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List,1)
                                 },
                                     {thr ->
                                         Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -113,7 +113,7 @@ class Menu1 : Fragment() {
                                 .subscribeOn(Schedulers.io())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .subscribe({ menu2List ->
-                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List)
+                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List,1)
                                 },
                                     {thr ->
                                         Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -148,7 +148,7 @@ class Menu1 : Fragment() {
                                 .subscribeOn(Schedulers.io())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .subscribe({ menu2List ->
-                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List)
+                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List,1)
                                 },
                                     {thr ->
                                         Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -159,7 +159,7 @@ class Menu1 : Fragment() {
                                 .subscribeOn(Schedulers.io())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .subscribe({ menu2List ->
-                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List)
+                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List,1)
                                 },
                                     {thr ->
                                         Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -170,7 +170,7 @@ class Menu1 : Fragment() {
                                 .subscribeOn(Schedulers.io())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .subscribe({ menu2List ->
-                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List)
+                                    rootView.recycler_menu1.adapter = MyMenu2Adapter(activity, menu2List,1)
                                 },
                                     {thr ->
                                         Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -216,7 +216,7 @@ class Menu1 : Fragment() {
                                         .subscribeOn(Schedulers.io())
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe({ menu2List ->
-                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List)
+                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List,1)
                                         },
                                             {thr ->
                                                 Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -226,7 +226,7 @@ class Menu1 : Fragment() {
                                         .subscribeOn(Schedulers.io())
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe({ menu2List ->
-                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List)
+                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List,1)
                                         },
                                             {thr ->
                                                 Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -236,7 +236,7 @@ class Menu1 : Fragment() {
                                         .subscribeOn(Schedulers.io())
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe({ menu2List ->
-                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List)
+                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List,1)
                                         },
                                             {thr ->
                                                 Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -272,7 +272,7 @@ class Menu1 : Fragment() {
                                         .subscribeOn(Schedulers.io())
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe({ menu2List ->
-                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List)
+                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List,1)
                                         },
                                             {thr ->
                                                 Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -282,7 +282,7 @@ class Menu1 : Fragment() {
                                         .subscribeOn(Schedulers.io())
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe({ menu2List ->
-                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List)
+                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List,1)
                                         },
                                             {thr ->
                                                 Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -292,7 +292,7 @@ class Menu1 : Fragment() {
                                         .subscribeOn(Schedulers.io())
                                         .observeOn(AndroidSchedulers.mainThread())
                                         .subscribe({ menu2List ->
-                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List)
+                                            rootView.recycler_menu1_2.adapter = MyMenu2Adapter(activity, menu2List,1)
                                         },
                                             {thr ->
                                                 Toast.makeText(activity,""+thr.message,Toast.LENGTH_SHORT).show()

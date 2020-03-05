@@ -6,6 +6,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
@@ -40,8 +41,25 @@ class Menu6 : AppCompatActivity() {
         profile_toolbar.title = "내 정보"
         setSupportActionBar(profile_toolbar)
 
+        // 유저 정보 읽기
+        compositeDisposable3.add(iMenu2API.Menu6_User_Info(Common.selected_fame_user!!.name)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({ menu2List ->
+                Log.d("json1",menu2List.toString())
+                Log.d("json2",menu2List.get(0).toString())
+                Log.d("json4",menu2List.get(0).get(0).asJsonObject.get("id").toString())
+                Log.d("json5",menu2List.get(0).get(0).asJsonObject.get("name").toString())
+
+            },
+                {thr ->
+                    Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
+                }))
+
+        // 유저 이름
         profil_name.setText(Common.selected_fame_user!!.name)
 
+        // 유저의 관심이나, 레시피 정보들 불러오기
         compositeDisposable3.add(
             iMenu2API.Menu6_Info(Common.selected_fame_user!!.name)
                 .subscribeOn(Schedulers.io())
@@ -81,6 +99,7 @@ class Menu6 : AppCompatActivity() {
                     })
         )
 
+        // 나의소개 이미지를 눌렀다면
         profil_create_text.setOnClickListener {
             val enter_name_view = LayoutInflater.from(this@Menu6)
                 .inflate(R.layout.menu6_dialog, null)
@@ -109,6 +128,7 @@ class Menu6 : AppCompatActivity() {
     }
     // 메인끝.
 
+    // 나의정보창에서 각버튼을 눌렀을때 화면에 맞게 나오기위해.
     fun Menu6_list_Info(cnt:Int, a:Int) {
         Common.selected_menu6 = a
         if(cnt > 0) {
