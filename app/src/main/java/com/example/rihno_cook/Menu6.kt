@@ -48,6 +48,7 @@ class Menu6 : AppCompatActivity() {
             .subscribe({ menu2List ->
                 Log.d("json1",menu2List.toString())
                 Log.d("json2",menu2List.get(0).toString())
+                Log.d("json2",menu2List.get(0).get(0).toString())
                 Log.d("json4",menu2List.get(0).get(0).asJsonObject.get("id").toString())
                 Log.d("json5",menu2List.get(0).get(0).asJsonObject.get("name").toString())
 
