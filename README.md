@@ -28,5 +28,5 @@ Rihno Cook은 사용자들끼리 자기만의 독창적인 레시피를 공유�
 
 ![레시피 업로드1](https://user-images.githubusercontent.com/58352779/77642898-bd072000-6fa1-11ea-9345-840fcb2a9d07.PNG)
 
-![레시피 업로드2](https://user-images.githubusercontent.com/58352779/77643114-21c27a80-6fa2-11ea-992b-91cae158359c.PNG)
+![레시피 업로드2](https://user-images.githubusercontent.com/58352779/77643353-8bdb1f80-6fa2-11ea-9143-a976a32fe068.PNG)
 
