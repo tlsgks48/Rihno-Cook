@@ -6,7 +6,7 @@
 ## 개발환경
 * Android(Kotlin)
 * Node.js
-* MySQL
+** MySQL
 * Retrofit2
 * Apache
 
