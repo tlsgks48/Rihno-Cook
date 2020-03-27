@@ -27,6 +27,11 @@ Rihno Cook은 사용자들끼리 자기만의 독창적인 레시피를 공유�
 [데모영상](https://drive.google.com/file/d/1vO-suTNcBleavfgPvTFw7jFkVduZwjz0/view?usp=sharing)
 
 ## 기능별 이미지
+* 로그인 및 회원가입
+
+![로그인 부분](https://user-images.githubusercontent.com/58352779/77731786-ee85f700-7046-11ea-8338-81375d3f6917.PNG)
+![회원가입 부분](https://user-images.githubusercontent.com/58352779/77731790-efb72400-7046-11ea-820f-98558d6b19ef.PNG)
+
 * 메인메뉴들(메인, 레시피, 쿡TV, 쿡토크)
 
 ![리프레쉬 메뉴1](https://user-images.githubusercontent.com/58352779/77731328-0a3ccd80-7046-11ea-855b-62593e91a9fa.png)
@@ -34,9 +39,14 @@ Rihno Cook은 사용자들끼리 자기만의 독창적인 레시피를 공유�
 ![리프레쉬 메뉴3 (2)](https://user-images.githubusercontent.com/58352779/77731336-0d37be00-7046-11ea-9be8-132e54525e9d.png)
 ![리프레쉬 메뉴4](https://user-images.githubusercontent.com/58352779/77731338-0d37be00-7046-11ea-8c87-d20a20c87d3d.png)
 
+* 레시피 업로드
 
+![레시피 업로드1](https://user-images.githubusercontent.com/58352779/77642898-bd072000-6fa1-11ea-9345-840fcb2a9d07.PNG) 
+![레시피 업로드2](https://user-images.githubusercontent.com/58352779/77643353-8bdb1f80-6fa2-11ea-9143-a976a32fe068.PNG)
 
-![레시피 업로드1](https://user-images.githubusercontent.com/58352779/77642898-bd072000-6fa1-11ea-9345-840fcb2a9d07.PNG) ![레시피 업로드2](https://user-images.githubusercontent.com/58352779/77643353-8bdb1f80-6fa2-11ea-9143-a976a32fe068.PNG)
+* 레시피 상세보기
+
+* 내정보 및 나의관심
 
 
 
