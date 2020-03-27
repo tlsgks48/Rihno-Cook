@@ -52,5 +52,6 @@ Rihno Cook은 사용자들끼리 자기만의 독창적인 레시피를 공유�
 
 * 내정보 및 나의관심
 
-
+![메뉴6](https://user-images.githubusercontent.com/58352779/77732209-b59a5200-7047-11ea-9057-8d8ce64bd5d6.PNG)
+![메뉴6 나의관심창](https://user-images.githubusercontent.com/58352779/77732214-b6cb7f00-7047-11ea-8556-7e10c4034467.PNG)
 
