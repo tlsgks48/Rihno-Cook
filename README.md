@@ -30,7 +30,7 @@ Rihno Cook은 사용자들끼리 자기만의 독창적인 레시피를 공유�
 * 메인메뉴들(메인, 레시피, 쿡TV, 쿡토크)
 
 ![리프레쉬 메뉴1](https://user-images.githubusercontent.com/58352779/77731328-0a3ccd80-7046-11ea-855b-62593e91a9fa.png)
-![리프레쉬 메뉴2](https://user-images.githubusercontent.com/58352779/77731335-0c069100-7046-11ea-965b-03a28d62b16e.png)
+![리프레쉬 메뉴2](https://user-images.githubusercontent.com/58352779/77731380-26d90580-7046-11ea-913f-280858a456ba.png)
 ![리프레쉬 메뉴3 (2)](https://user-images.githubusercontent.com/58352779/77731336-0d37be00-7046-11ea-9be8-132e54525e9d.png)
 ![리프레쉬 메뉴4](https://user-images.githubusercontent.com/58352779/77731338-0d37be00-7046-11ea-8c87-d20a20c87d3d.png)
 
