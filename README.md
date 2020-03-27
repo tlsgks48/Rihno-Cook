@@ -24,9 +24,9 @@ Rihno Cook은 사용자들끼리 자기만의 독창적인 레시피를 공유�
   1. 좋아요 보관함 : 사용자가 좋아요 표시한 레시피들을 모아서 볼 수 있다.
 
 ## 데모영상
-[데모영상](https://github.com/tlsgks48/Rihno-Cook)
+[데모영상](https://drive.google.com/file/d/1vO-suTNcBleavfgPvTFw7jFkVduZwjz0/view?usp=sharing)
 
-![레시피 업로드1](https://user-images.githubusercontent.com/58352779/77642898-bd072000-6fa1-11ea-9345-840fcb2a9d07.PNG)
+![레시피 업로드1](https://user-images.githubusercontent.com/58352779/77642898-bd072000-6fa1-11ea-9345-840fcb2a9d07.PNG) ![레시피 업로드2](https://user-images.githubusercontent.com/58352779/77643353-8bdb1f80-6fa2-11ea-9143-a976a32fe068.PNG)
 
-![레시피 업로드2](https://user-images.githubusercontent.com/58352779/77643353-8bdb1f80-6fa2-11ea-9143-a976a32fe068.PNG)
+
 
