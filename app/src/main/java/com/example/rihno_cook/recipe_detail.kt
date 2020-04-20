@@ -12,9 +12,11 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import com.example.rihno_cook.Adapter.DetailOrderAdapter
 import com.example.rihno_cook.Adapter.DetailUnitAdapter
+import com.example.rihno_cook.Adapter.DetailUnitAdapter2
 import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Model.Order
 import com.example.rihno_cook.Model.Unit
@@ -96,7 +98,11 @@ class recipe_detail : AppCompatActivity() {
         R_detail_recyc_material.layoutManager = LinearLayoutManager(this)
         R_detail_recyc_material.adapter = DetailUnitAdapter(this,DUnitList)
 
+        R_detail_recyc_order2.setHasFixedSize(true)
+        R_detail_recyc_order2.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        R_detail_recyc_order2.adapter = DetailUnitAdapter2(this,DUnitList)
 
+        R_detail_recyc_order2.visibility = View.INVISIBLE
 
         // 순서 추가
         R_detail_recyc_order.setHasFixedSize(true)

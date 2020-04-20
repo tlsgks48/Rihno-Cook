@@ -1,5 +1,7 @@
 package com.example.rihno_cook.Retrofit
 
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -133,4 +135,9 @@ interface IUploadAPI {
         @Part ("id") id:Int,
         @Part ("text") text:String,
         @Part ("day") day:String): Call<String>
+
+    @Multipart
+    @POST("menu6_image")
+    fun ProfilFile(@Part file: MultipartBody.Part,
+                   @Part ("user") user:String): Call<String>
 }

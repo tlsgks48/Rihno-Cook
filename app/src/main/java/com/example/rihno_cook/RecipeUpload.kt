@@ -270,7 +270,7 @@ class RecipeUpload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             // 순서 리싸이클러뷰 리스트 추가
             OrderList.add(Order("","http://192.168.56.1:3000/add_black.png")) // "http://192.168.56.1:3000/add_black.png" , fileUri.toString()
             Recipe_order_recycler.adapter?.notifyDataSetChanged()
-            Toast.makeText(this,OrderList.get(0).image,Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this,OrderList.get(0).image,Toast.LENGTH_SHORT).show()
         }
         //Request runtime permission
         if(ActivityCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)

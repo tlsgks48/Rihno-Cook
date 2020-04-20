@@ -343,7 +343,7 @@ class recipeUpdate : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
             OrderList.add(Order("","http://192.168.56.1:3000/add_black.png")) // "http://192.168.56.1:3000/add_black.png" , fileUri.toString()
             Recipe_update_order_recycler.adapter?.notifyDataSetChanged()
             //Toast.makeText(this,DorderList.get(0).image, Toast.LENGTH_SHORT).show()
-            Toast.makeText(this,OrderList.get(0).image, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this,OrderList.get(0).image, Toast.LENGTH_SHORT).show()
         }
 
        // Recipe_update_order_recycler.adapter = Menu2OrderAdapter(this,this,OrderList)

@@ -5,14 +5,8 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import com.example.rihno_cook.Model.*
-import com.example.rihno_cook.Retrofit.IMenu2API
-import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
-import com.example.rihno_cook.Retrofit.RetrofitClinet2
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.example.rihno_cook.Retrofit.*
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
 //import com.example.rihno_cook.Retrofit.RetrofitClient
 import java.net.ConnectException
 
@@ -57,14 +51,10 @@ object Common {
         return retrofit.create(IMenu2API::class.java)
     }
 
-    fun gtest1(fu:Observable<String>) {
-        val retrofit = RetrofitClient.instance
-        myAPI = retrofit.create(INodeJS::class.java)
-
-        compositeDisposable0.add(myAPI.qtest1(fu).subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe())
-
-    }
+    val apiUpload: IUploadAPI
+        get() {
+            val retrofit =  RetrofitClient.instance
+            return retrofit.create(IUploadAPI::class.java)
+        }
 
 }

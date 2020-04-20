@@ -1,10 +1,14 @@
 package com.example.rihno_cook
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.ContentValues
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,17 +17,33 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Retrofit.IMenu2API
-import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
+import com.example.rihno_cook.Retrofit.IUploadAPI
+import com.example.rihno_cook.Utils.ProgressRequestBody
+import com.google.gson.JsonObject
+import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.menu6.*
+import okhttp3.MultipartBody
+import retrofit2.Call
+import retrofit2.Response
 
-class Menu6 : AppCompatActivity() {
+class Menu6 : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     internal var compositeDisposable3 = CompositeDisposable()
     internal lateinit var iMenu2API: IMenu2API
+    internal lateinit var mService: IUploadAPI
+
+    private val PICK_IMAGE_REQUEST:Int = 1001
+    private val PICK_PHOTO_REQUEST:Int = 1002
+    var fileUri: Uri? = null
+
+    override fun onProgressUpdate(percentage: Int) {
+
+    }
 
     override fun onStop() {
         compositeDisposable3.clear()
@@ -36,6 +56,7 @@ class Menu6 : AppCompatActivity() {
         setContentView(R.layout.menu6)
 
         iMenu2API = Common.api
+        mService = Common.apiUpload
 
         // toolbar
         profile_toolbar.title = "내 정보"
@@ -49,9 +70,7 @@ class Menu6 : AppCompatActivity() {
                 Log.d("json1",menu2List.toString())
                 Log.d("json2",menu2List.get(0).toString())
                 Log.d("json2",menu2List.get(0).get(0).toString())
-                Log.d("json4",menu2List.get(0).get(0).asJsonObject.get("id").toString())
                 Log.d("json5",menu2List.get(0).get(0).asJsonObject.get("name").toString())
-
             },
                 {thr ->
                     Toast.makeText(this,""+thr.message,Toast.LENGTH_SHORT).show()
@@ -59,6 +78,49 @@ class Menu6 : AppCompatActivity() {
 
         // 유저 이름
         profil_name.setText(Common.selected_fame_user!!.name)
+
+        // 프로필 사진을 눌렀을 경우.
+        profil_imageView.setOnClickListener {
+            val dialog = AlertDialog.Builder(this)
+            dialog.setTitle("사진 선택")
+            dialog.setMessage("사진을 촬영하시거나, 갤러리에서 원하시는 사진을 선택해주세요.")
+            // 갤러리 선택
+            fun d_p() {
+                val getCountIntent = FileUtils.createGetContentIntent()
+                val intent = Intent.createChooser(getCountIntent, "Select a file")
+                startActivityForResult(intent,PICK_IMAGE_REQUEST)
+            }
+            // 카메라 선택
+            fun d_n() {
+                val values = ContentValues(1)
+                values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpg")
+                fileUri = contentResolver
+                    .insert(
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        values)
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                if(intent.resolveActivity(packageManager) != null) {
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri)
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION
+                            or Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+                    startActivityForResult(intent, PICK_PHOTO_REQUEST)
+                }
+            }
+            val dialog_listner = object : DialogInterface.OnClickListener{
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    when(which){
+                        DialogInterface.BUTTON_POSITIVE ->
+                            d_p()
+                        DialogInterface.BUTTON_NEGATIVE ->
+                            d_n()
+                    }
+                }
+            }
+            dialog.setPositiveButton("갤러리",dialog_listner)
+            dialog.setNegativeButton("사진 촬영",dialog_listner)
+            dialog.setNeutralButton("Cancel",null)
+            dialog.show()
+        }
 
         // 유저의 관심이나, 레시피 정보들 불러오기
         compositeDisposable3.add(
@@ -128,6 +190,40 @@ class Menu6 : AppCompatActivity() {
         }
     }
     // 메인끝.
+
+    private fun uploadFile() {
+            val file = FileUtils.getFile(this, fileUri)
+            val requestFile = ProgressRequestBody(file, this)
+            val body = MultipartBody.Part.createFormData("profilefile", file.name, requestFile)
+
+            Thread(Runnable {
+                mService.ProfilFile(body, Common.selected_fame_user!!.name!!).enqueue(object: retrofit2.Callback<String> {
+                    override fun onFailure(call: Call<String>, t: Throwable) {
+                        Toast.makeText(this@Menu6, t.message, Toast.LENGTH_LONG).show()
+                    }
+                    override fun onResponse(call: Call<String>, response: Response<String>) {
+
+                        Toast.makeText(this@Menu6, "프로필 이미지 업로딩 성공!! "+response.body(), Toast.LENGTH_LONG).show()
+                    }
+                })
+            }).start()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK
+            && requestCode == PICK_IMAGE_REQUEST) {
+            //display the photo on the imageview
+            fileUri = data?.data
+            Glide.with(this).load(fileUri).into(profil_imageView)
+            uploadFile()
+        }
+        else if(resultCode == Activity.RESULT_OK
+            && requestCode == PICK_PHOTO_REQUEST) {
+            Glide.with(this).load(fileUri).into(profil_imageView)
+            uploadFile()
+        }
+    }
 
     // 나의정보창에서 각버튼을 눌렀을때 화면에 맞게 나오기위해.
     fun Menu6_list_Info(cnt:Int, a:Int) {
