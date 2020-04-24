@@ -46,15 +46,7 @@ class recipeUpdate : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         Toast.makeText(this,"업로딩 진행중", Toast.LENGTH_SHORT).show()
     }
 
-    val BASE_URL = "http://10.0.3.2:3000/"
-
-    val apiUpload: IUploadAPI
-        get() = RetrofitClient3.getClient(BASE_URL).create(IUploadAPI::class.java)
-
-    lateinit var mService: IUploadAPI
-
     private val PERMISSION_REQUEST: Int = 1000
-
     private val PICK_IMAGE_REQUEST:Int = 1001
 
     var fileUri: Uri? = null
@@ -86,13 +78,14 @@ class recipeUpdate : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     // 유저 이름 호출 부분
     internal var compositeDisposable = CompositeDisposable()
     lateinit var myAPI: INodeJS
+    lateinit var mService: IUploadAPI
     internal lateinit var iMenu2API: IMenu2API
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_update)
         //Service
-        mService = apiUpload
+        mService = Common.apiUpload
 
         //Inot API
         val retrofit = RetrofitClient.instance

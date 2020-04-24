@@ -48,27 +48,16 @@ class RecipeUpload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     override fun onProgressUpdate(percentage: Int) {
         Toast.makeText(this,"업로딩 진행중",Toast.LENGTH_SHORT).show()
     }
-
-    val BASE_URL = "http://10.0.3.2:3000/"
-
-    val apiUpload:IUploadAPI
-        get() = RetrofitClient3.getClient(BASE_URL).create(IUploadAPI::class.java)
-
-    lateinit var mService:IUploadAPI
-
     private val PERMISSION_REQUEST: Int = 1000
-
     private val PICK_IMAGE_REQUEST:Int = 1001
 
     var fileUri: Uri? = null
-
     // 요리순서 이미지 uri
     var OfileUri:Uri? = null
 
     // 재료와 요리순서 리스트
     var UnitList = arrayListOf<Unit>()
     var OrderList = arrayListOf<Order>()
-
     var json:String = ""
 
     // 스피너 리스트 담을 스트링 변수
@@ -79,25 +68,25 @@ class RecipeUpload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     var R_U_spinner5:String = ""
 
     var r_i : Int = 0
-
     var ob : Objects? = null
-
     var j : Int = 0
 
     // 유저 이름 호출 부분
     internal var compositeDisposable = CompositeDisposable()
     lateinit var myAPI: INodeJS
+    lateinit var mService: IUploadAPI
     var user_name : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_upload)
-        //Service
-        mService = apiUpload
 
         //Inot API
-        val retrofit = RetrofitClient.instance
-        myAPI = retrofit.create(INodeJS::class.java)
+        myAPI = Common.apiN
+        mService = Common.apiUpload
+
+        //val retrofit = RetrofitClient.instance
+        //myAPI = retrofit.create(INodeJS::class.java)
 
         // 유저 이름
         compositeDisposable.add(myAPI.login_name()

@@ -310,8 +310,6 @@ class Menu1 : Fragment() {
             })
         // 유저 불러오기 끝
 
-
-
         return rootView
     }
 

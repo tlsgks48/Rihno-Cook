@@ -57,4 +57,10 @@ object Common {
             return retrofit.create(IUploadAPI::class.java)
         }
 
+    val apiN:INodeJS
+    get() {
+        val retrofit = RetrofitClient.instance
+        return retrofit.create(INodeJS::class.java)
+    }
+
 }

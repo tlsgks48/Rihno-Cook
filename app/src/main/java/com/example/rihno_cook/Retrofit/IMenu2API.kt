@@ -4,9 +4,11 @@ import com.example.rihno_cook.Model.*
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import io.reactivex.Observable
+import retrofit2.Response
 import retrofit2.http.*
 
 interface IMenu2API {
+
     @get:GET("menu2")
     val menu2List:Observable<List<Recipe>>
 

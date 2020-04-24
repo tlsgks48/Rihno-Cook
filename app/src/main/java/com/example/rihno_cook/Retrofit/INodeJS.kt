@@ -1,13 +1,13 @@
 package com.example.rihno_cook.Retrofit
 
 import io.reactivex.Observable
+import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface INodeJS {
-     fun qtest1(fu:Observable<String>):Observable<String>
     // @@@@@@@@@@@@@@@@@@@@@@@@  로그인 및 회원가입 유저 정보
     @POST("register")
     @FormUrlEncoded

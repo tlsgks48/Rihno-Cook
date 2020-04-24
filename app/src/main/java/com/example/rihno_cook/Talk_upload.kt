@@ -18,7 +18,6 @@ import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Retrofit.INodeJS
 import com.example.rihno_cook.Retrofit.IUploadAPI
 import com.example.rihno_cook.Retrofit.RetrofitClient
-import com.example.rihno_cook.Retrofit.RetrofitClient3
 import com.example.rihno_cook.Utils.ProgressRequestBody
 import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable
@@ -34,10 +33,6 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     override fun onProgressUpdate(percentage: Int) {
         Toast.makeText(this,"업로딩 진행중", Toast.LENGTH_SHORT).show()
     }
-
-    val BASE_URL = "http://10.0.3.2:3000/"
-    val apiUpload: IUploadAPI
-        get() = RetrofitClient3.getClient(BASE_URL).create(IUploadAPI::class.java)
 
     lateinit var mService: IUploadAPI
     internal var compositeDisposable = CompositeDisposable()
@@ -56,7 +51,7 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         setContentView(R.layout.activity_talk_upload)
 
         //Service
-        mService = apiUpload
+        mService = Common.apiUpload
 
         //Inot API
         val retrofit = RetrofitClient.instance
