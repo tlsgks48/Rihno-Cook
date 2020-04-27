@@ -28,13 +28,8 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.enter_name_layout.*
 
 
-class Login : AppCompatActivity(), ILoginView {
-    override fun onLoginResult(message: String) {
-        //Toast.makeText(this@Login,message,Toast.LENGTH_SHORT).show()
-    }
-
+class Login : AppCompatActivity(){
     internal lateinit var loginPresenter: ILoginPresenter
-
     lateinit var myAPI:INodeJS
     var compositeDisposable = CompositeDisposable()
 
@@ -56,30 +51,14 @@ class Login : AppCompatActivity(), ILoginView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        //Init
-        loginPresenter = LoginPresenter(this)
-
-        //
-
         //Inot API
         val retrofit = RetrofitClient.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
-        // test
-        //Common.gtest1(myAPI.loginUser(edit_email.text.toString(),edit_password.text.toString()))
-
         //Event
         login_button.setOnClickListener {
             login(edit_email.text.toString(),edit_password.text.toString())
-            //loginPresenter.onLogin(edit_email.text.toString(),edit_password.text.toString())
-
-            //login_user()
         }
-
-
-/*        login_button.setOnClickListener {
-            login(edit_email.text.toString(),edit_password.text.toString())
-        }*/
 
         register_button.setOnClickListener {
             register() // edit_email.text.toString(),edit_password.text.toString()
@@ -88,7 +67,6 @@ class Login : AppCompatActivity(), ILoginView {
     }
 
     private fun register() { // email: String, password: String
-
         val enter_name_view = LayoutInflater.from(this@Login)
             .inflate(R.layout.enter_name_layout,null)
 
@@ -152,7 +130,6 @@ class Login : AppCompatActivity(), ILoginView {
     }
 
     override fun onStop() {
-
         compositeDisposable.clear()
         super.onStop()
     }

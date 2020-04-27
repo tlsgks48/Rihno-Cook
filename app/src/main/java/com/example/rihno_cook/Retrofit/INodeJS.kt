@@ -9,6 +9,8 @@ import retrofit2.http.POST
 
 interface INodeJS {
     // @@@@@@@@@@@@@@@@@@@@@@@@  로그인 및 회원가입 유저 정보
+
+    // 일단 로그인 부분부터 고쳐보자.
     @POST("register")
     @FormUrlEncoded
     fun registerUser(@Field("email") email:String,
