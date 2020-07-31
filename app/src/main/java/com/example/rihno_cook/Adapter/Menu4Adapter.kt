@@ -18,7 +18,6 @@ import com.example.rihno_cook.Menu4_list
 import com.example.rihno_cook.Model.Talk
 import com.example.rihno_cook.R
 import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -26,7 +25,6 @@ import java.lang.RuntimeException
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class Menu4Adapter(internal var context: Context?,

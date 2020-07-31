@@ -11,7 +11,6 @@ import com.example.rihno_cook.Interface.IRecyclerOnClick
 import com.example.rihno_cook.Model.Comment
 import com.example.rihno_cook.R
 import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

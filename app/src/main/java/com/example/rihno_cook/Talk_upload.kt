@@ -17,17 +17,14 @@ import com.bumptech.glide.Glide
 import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Retrofit.INodeJS
 import com.example.rihno_cook.Retrofit.IUploadAPI
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import com.example.rihno_cook.Utils.ProgressRequestBody
 import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_talk_upload.*
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.Call
 import java.time.LocalDate
-import java.time.LocalDateTime
 
 class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
     override fun onProgressUpdate(percentage: Int) {

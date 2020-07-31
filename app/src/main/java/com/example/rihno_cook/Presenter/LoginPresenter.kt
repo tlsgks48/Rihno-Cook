@@ -1,14 +1,9 @@
 package com.example.rihno_cook.Presenter
 
-import android.content.Context
 import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
-import android.widget.Toast
 import com.example.rihno_cook.Login
 import com.example.rihno_cook.MainActivity
-import com.example.rihno_cook.Model.User
 import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import com.example.rihno_cook.View.ILoginView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

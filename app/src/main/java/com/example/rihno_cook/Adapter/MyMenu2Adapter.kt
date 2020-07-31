@@ -13,7 +13,6 @@ import com.example.rihno_cook.Interface.IRecyclerOnClick
 import com.example.rihno_cook.Model.Recipe
 import com.example.rihno_cook.R
 import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import com.example.rihno_cook.recipe_detail
 import com.squareup.picasso.Picasso
 import io.reactivex.android.schedulers.AndroidSchedulers

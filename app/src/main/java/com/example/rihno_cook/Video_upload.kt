@@ -1,19 +1,15 @@
 package com.example.rihno_cook
 
-import android.Manifest
-import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Retrofit.INodeJS
 import com.example.rihno_cook.Retrofit.IUploadAPI
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import com.example.rihno_cook.Utils.ProgressRequestBody
 import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable

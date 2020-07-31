@@ -11,12 +11,10 @@ import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Model.Comment
 import com.example.rihno_cook.Retrofit.IMenu2API
 import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_recipe_comment.*
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

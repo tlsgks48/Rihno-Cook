@@ -17,7 +17,6 @@ import com.bumptech.glide.Glide
 import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Retrofit.INodeJS
 import com.example.rihno_cook.Retrofit.IUploadAPI
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import com.example.rihno_cook.Utils.ProgressRequestBody
 import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable

@@ -12,11 +12,9 @@ import android.view.MenuItem
 import android.widget.MediaController
 import kotlinx.android.synthetic.main.activity_menu3_list.*
 import android.widget.Toast
-import com.bumptech.glide.Glide
 import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Retrofit.IMenu2API
 import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

@@ -1,6 +1,5 @@
 package com.example.rihno_cook
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -13,13 +12,11 @@ import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Model.Good_Fame
 import com.example.rihno_cook.Retrofit.IMenu2API
 import com.example.rihno_cook.Retrofit.INodeJS
-import com.example.rihno_cook.Retrofit.RetrofitClient
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_menu1.*
 import kotlinx.android.synthetic.main.fragment_menu1.view.*
 
 
