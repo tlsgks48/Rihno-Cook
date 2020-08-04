@@ -51,7 +51,6 @@ object Common {
         return retrofit.create(IMenu2API::class.java)
     }
 
-
     val apiN:INodeJS
     get() {
         val retrofit = RetrofitClient.instance
