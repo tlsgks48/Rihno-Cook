@@ -72,12 +72,6 @@ interface IUploadAPI {
                         @Part ("number") number:Int,
                         @Part ("text") text:String): Call<String>
 
-    @Multipart
-    @POST("order_update") // 순서 이미지가 없는 경우
-    fun uploadUpdateOrderFile(@Part ("recipe_id") recipe_id:Int,
-                        @Part ("number") number:Int,
-                        @Part ("text") text:String): Call<String>
-
     @POST("order_update2") // 순서 이미지가 없는 경우
     @FormUrlEncoded
     fun uploadUpdateOrderFile2(@Field ("recipe_id") recipe_id:Int,

@@ -12,8 +12,6 @@ import java.net.ConnectException
 
 object Common {
     lateinit var myAPI:INodeJS
-    internal var compositeDisposable0 = CompositeDisposable()
-
     var selected_recipe: Recipe?=null
     var selected_recipe_user: LoginUser?=null
     var selected_fame_user: LoginUser?=null
@@ -49,12 +47,6 @@ object Common {
     get() {
         val retrofit =  RetrofitClinet2.instance
         return retrofit.create(IMenu2API::class.java)
-    }
-
-    val apiN:INodeJS
-    get() {
-        val retrofit = RetrofitClient.instance
-        return retrofit.create(INodeJS::class.java)
     }
 
 }
