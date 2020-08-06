@@ -6,9 +6,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import com.example.rihno_cook.Model.*
 import com.example.rihno_cook.Retrofit.*
-import io.reactivex.disposables.CompositeDisposable
 //import com.example.rihno_cook.Retrofit.RetrofitClient
-import java.net.ConnectException
 
 object Common {
     lateinit var myAPI:INodeJS
@@ -45,7 +43,7 @@ object Common {
 
     val api:IMenu2API
     get() {
-        val retrofit =  RetrofitClinet2.instance
+        val retrofit =  RetrofitClinet.instance
         return retrofit.create(IMenu2API::class.java)
     }
 
