@@ -25,12 +25,6 @@ class MainActivity : AppCompatActivity() {
         //Init API
         iMenu2API = Common.api
 
-        //View setup
-        //toolbar = findViewById(R.id.toolbar) as Toolbar
-        //setSupportActionBar(toolbar)
-        //supportActionBar?.setLogo(R.mipmap.ic_launcher)
-        //supportActionBar?.setDisplayUseLogoEnabled(true)
-
         val secondIntent = intent
         secondIntent.getIntExtra("번호", 0)
 
@@ -69,11 +63,9 @@ class MainActivity : AppCompatActivity() {
                 startActivity(nextIntent)
                 return true
             }
-
             else -> {
                 return super.onOptionsItemSelected(item)
             }
-
         }
     }
 }

@@ -9,8 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.example.rihno_cook.Presenter.ILoginPresenter
 import com.example.rihno_cook.Retrofit.INodeJS
+import com.example.rihno_cook.Retrofit.RetrofitClinet
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog
 import com.github.javiersantos.materialstyleddialogs.enums.Style
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -20,7 +20,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 
 class Login : AppCompatActivity(){
-    internal lateinit var loginPresenter: ILoginPresenter
     lateinit var myAPI:INodeJS
     var compositeDisposable = CompositeDisposable()
 
@@ -43,7 +42,7 @@ class Login : AppCompatActivity(){
         setContentView(R.layout.activity_login)
 
         //Inot API
-        val retrofit = RetrofitClient.instance
+        val retrofit = RetrofitClinet.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
         //Event
