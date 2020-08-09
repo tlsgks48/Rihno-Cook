@@ -204,4 +204,6 @@ interface IMenu2API {
     @POST("menu6_image")
     fun ProfilFile(@Part file: MultipartBody.Part,
                    @Part ("user") user:String): Call<String>
+
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 예전 NodeJS API 구간
 }
