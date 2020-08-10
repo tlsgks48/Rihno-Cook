@@ -15,8 +15,10 @@ import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.rihno_cook.Common.Common
+import com.example.rihno_cook.Retrofit.IMenu2API
 import com.example.rihno_cook.Retrofit.INodeJS
 import com.example.rihno_cook.Retrofit.IUploadAPI
+import com.example.rihno_cook.Retrofit.RetrofitClinet
 import com.example.rihno_cook.Utils.ProgressRequestBody
 import com.ipaulpro.afilechooser.utils.FileUtils
 import io.reactivex.disposables.CompositeDisposable
@@ -31,7 +33,7 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         Toast.makeText(this,"업로딩 진행중", Toast.LENGTH_SHORT).show()
     }
 
-    lateinit var mService: IUploadAPI
+    lateinit var mService: IMenu2API
     internal var compositeDisposable = CompositeDisposable()
     lateinit var myAPI: INodeJS
 
@@ -48,10 +50,10 @@ class Talk_upload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         setContentView(R.layout.activity_talk_upload)
 
         //Service
-        mService = Common.apiUpload
+        mService = Common.api
 
         //Inot API
-        val retrofit = RetrofitClient.instance
+        val retrofit = RetrofitClinet.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
         Talk_imageView_layout.visibility = View.INVISIBLE

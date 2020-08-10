@@ -206,4 +206,30 @@ interface IMenu2API {
                    @Part ("user") user:String): Call<String>
 
     // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 예전 NodeJS API 구간
+
+    // @@@@@@@@@@@@@@@@@@@@@@@@  로그인 및 회원가입 유저 정보
+
+    // 일단 로그인 부분부터 고쳐보자.
+    @POST("register")
+    @FormUrlEncoded
+    fun registerUser(@Field("email") email:String,
+                     @Field("name") name:String,
+                     @Field("password") password:String):Observable<String>
+
+    @POST("login")
+    @FormUrlEncoded
+    fun loginUser(@Field("email") email:String,
+                  @Field("password") password:String):Observable<String>
+
+    @POST("login_check")
+    @FormUrlEncoded
+    fun loginCheck(@Field("email") email:String):Observable<String>
+
+    @POST("login_user")
+    @FormUrlEncoded
+    fun login_user(@Field("name") email:String,
+                   @Field("email") name:String):Observable<String>
+
+    @GET("login_name")
+    fun login_name():Observable<String>
 }
