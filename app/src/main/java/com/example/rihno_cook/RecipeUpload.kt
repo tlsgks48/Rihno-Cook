@@ -73,8 +73,8 @@ class RecipeUpload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
 
     // 유저 이름 호출 부분
     internal var compositeDisposable = CompositeDisposable()
-    lateinit var myAPI: INodeJS
-    lateinit var mService: IUploadAPI
+    lateinit var myAPI: IMenu2API
+    lateinit var mService: IMenu2API
     var user_name : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,8 +82,8 @@ class RecipeUpload : AppCompatActivity(), ProgressRequestBody.UploadCallbacks {
         setContentView(R.layout.activity_recipe_upload)
 
         //Inot API
-        myAPI = Common.apiN
-        mService = Common.apiUpload
+        myAPI = Common.api
+        mService = Common.api
 
         //val retrofit = RetrofitClient.instance
         //myAPI = retrofit.create(INodeJS::class.java)

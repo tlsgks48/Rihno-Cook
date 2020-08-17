@@ -75,7 +75,7 @@ interface IMenu2API {
     @FormUrlEncoded
     fun Menu6_list_good_list(@Field("id") id:Int):Observable<ArrayList<JsonArray>>
 
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 예전 UploadAPI 구간
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 예전 UploadAPI 구간
 
     @Multipart
     @POST("upload")
@@ -205,7 +205,7 @@ interface IMenu2API {
     fun ProfilFile(@Part file: MultipartBody.Part,
                    @Part ("user") user:String): Call<String>
 
-    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 예전 NodeJS API 구간
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 예전 NodeJS API 구간
 
     // @@@@@@@@@@@@@@@@@@@@@@@@  로그인 및 회원가입 유저 정보
 
@@ -232,4 +232,54 @@ interface IMenu2API {
 
     @GET("login_name")
     fun login_name():Observable<String>
+
+    // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 메뉴1~2 레시피부분
+
+    @POST("last_number")
+    fun last_number():Observable<String>
+
+    @POST("recipe_delete")
+    @FormUrlEncoded
+    fun recipe_delete(@Field("id") id:Int):Observable<String>
+
+    @POST("order_delete")
+    @FormUrlEncoded
+    fun recipe_order_delete(@Field("recipe_id") recipe_id:Int):Observable<String>
+
+    @POST("comment")
+    @FormUrlEncoded
+    fun recipe_comment(@Field("user") user:String,
+                       @Field("recipe_id") recipe_id:Int,
+                       @Field("text") text:String,
+                       @Field("date") date:String):Observable<Int>
+
+    @POST("comment_delete")
+    @FormUrlEncoded
+    fun recipe_comment_delete(@Field("id") id:Int):Observable<String>
+
+    // 카운트 조회 댓글
+    @POST("comment_number")
+    @FormUrlEncoded
+    fun recipe_comment_number(@Field("recipe_id") recipe_id:Int):Observable<Int>
+
+    // 카운트 조회 관심
+    @POST("good_number")
+    @FormUrlEncoded
+    fun recipe_good_number(@Field("recipe_id") recipe_id:Int):Observable<Int>
+
+    @POST("good")
+    @FormUrlEncoded
+    fun recipe_good(@Field("user") user:String,
+                    @Field ("category0") category0:Int,
+                    @Field("recipe_id") recipe_id:Int):Observable<String>
+
+    @POST("good_delete")
+    @FormUrlEncoded
+    fun recipe_good_delete(@Field("user") user:String,
+                           @Field("recipe_id") recipe_id:Int):Observable<String>
+
+    @POST("good_first")
+    @FormUrlEncoded
+    fun recipe_good_first(@Field("user") user:String,
+                          @Field("recipe_id") recipe_id:Int):Observable<Int>
 }
