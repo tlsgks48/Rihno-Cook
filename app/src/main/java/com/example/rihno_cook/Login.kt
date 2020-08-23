@@ -56,6 +56,8 @@ class Login : AppCompatActivity(){
 
     }
 
+    // 로그인, 회원가입, 각종 정보들을 DB에 넣는 함수들을 일일이 말고 JSON으로 뭉쳐서 옮겨보자.
+
     private fun register() { // email: String, password: String
         val enter_name_view = LayoutInflater.from(this@Login)
             .inflate(R.layout.enter_name_layout,null)
