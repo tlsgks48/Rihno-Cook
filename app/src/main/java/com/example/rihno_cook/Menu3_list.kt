@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.example.rihno_cook.Common.Common
 import com.example.rihno_cook.Retrofit.IMenu2API
 import com.example.rihno_cook.Retrofit.INodeJS
+import com.example.rihno_cook.Retrofit.RetrofitClinet
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -39,7 +40,7 @@ class Menu3_list : AppCompatActivity() {
         iMenu2API = Common.api
 
         //삭제를 위한 리트로핏 API
-        val retrofit = RetrofitClient.instance
+        val retrofit = RetrofitClinet.instance
         myAPI = retrofit.create(INodeJS::class.java)
 
         //

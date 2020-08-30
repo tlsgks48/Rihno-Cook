@@ -327,4 +327,49 @@ interface IMenu2API {
     @POST("comment_delete3")
     @FormUrlEncoded
     fun recipe_comment_delete3(@Field("id") id:Int):Observable<String>
+
+    //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 메뉴4 토크 부분
+
+    // 메뉴4 카운트 조회 댓글
+    @POST("comment_number4")
+    @FormUrlEncoded
+    fun recipe_comment_number4(@Field("recipe_id") recipe_id:Int):Observable<Int>
+
+    // 메뉴4 카운트 조회 관심
+    @POST("good_number4")
+    @FormUrlEncoded
+    fun recipe_good_number4(@Field("recipe_id") recipe_id:Int):Observable<Int>
+
+    // 관심부분
+    @POST("good4")
+    @FormUrlEncoded
+    fun recipe_good4(@Field("user") user:String,
+                     @Field("recipe_id") recipe_id:Int):Observable<String>
+
+    @POST("good_delete4")
+    @FormUrlEncoded
+    fun recipe_good_delete4(@Field("user") user:String,
+                            @Field("recipe_id") recipe_id:Int):Observable<String>
+
+    @POST("good_first4")
+    @FormUrlEncoded
+    fun recipe_good_first4(@Field("user") user:String,
+                           @Field("recipe_id") recipe_id:Int):Observable<Int>
+
+    // 토크,삭제, 댓글 부분
+
+    @POST("menu4_delete")
+    @FormUrlEncoded
+    fun recipe_delete4(@Field("id") id:Int):Observable<String>
+
+    @POST("comment4")
+    @FormUrlEncoded
+    fun recipe_comment4(@Field("user") user:String,
+                        @Field("recipe_id") recipe_id:Int,
+                        @Field("text") text:String,
+                        @Field("date") date:String):Observable<Int>
+
+    @POST("comment_delete4")
+    @FormUrlEncoded
+    fun recipe_comment_delete4(@Field("id") id:Int):Observable<String>
 }
